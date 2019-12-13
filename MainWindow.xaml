@@ -7,15 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-<<<<<<< HEAD
-        <TextBox HorizontalAlignment="Left" Margin="280,217,0,0" Text="Bonjour les gogols" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged" SelectionOpacity="1" UndoLimit="100" FontFamily="Arial"/>
-=======
-<<<<<<< HEAD
         <TextBox HorizontalAlignment="Left" Margin="432,177,0,0" Text="Bonjour les gogols" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged" SelectionOpacity="1" UndoLimit="100" FontFamily="Arial"/>
         <Button Content="Button" HorizontalAlignment="Left" Height="20" Margin="305,177,0,0" VerticalAlignment="Top" Width="106"/>
-=======
-        <TextBox HorizontalAlignment="Left" Margin="432,177,0,0" Text="HELLO les vieux GOGOLS" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged" SelectionOpacity="1" UndoLimit="100" FontFamily="Arial"/>
->>>>>>> f9a465b516abfd90c020ff3510d2752cc24cab8d
->>>>>>> 61ed02cc0bde062b9e2ac358b3a6c6e165e415e8
     </Grid>
 </Window>
