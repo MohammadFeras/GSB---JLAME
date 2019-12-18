@@ -7,16 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="501" Width="890">
     <Grid>
-        <Button Content="Visiteur" HorizontalAlignment="Left" Height="50" Margin="607,306,0,0" VerticalAlignment="Top" Width="230" IsCancel="True" Click="Button_Click_Visiteur" FontSize="20" BorderBrush="#FF020000">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0,1">
-                    <GradientStop Color="#FFF3F3F3"/>
-                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
-                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
-                    <GradientStop Color="#FFCDCDCD" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
+        <Button Content="Visiteur" HorizontalAlignment="Left" Height="50" Margin="607,306,0,0" VerticalAlignment="Top" Width="230" IsCancel="True" Click="Button_Click_Visiteur" FontSize="20" BorderBrush="#FF020000"/>
         <Button Content="Comptabilité" HorizontalAlignment="Left" Height="50" Margin="286,306,0,0" VerticalAlignment="Top" Width="230" IsCancel="True" Click="Button_Click_Comptabilite" FontSize="20" BorderBrush="#FF0A0505"/>
         <Image HorizontalAlignment="Left" Height="89" Margin="121,59,0,0" VerticalAlignment="Top" Width="111"/>
         <Image HorizontalAlignment="Left" Height="130" VerticalAlignment="Top" Width="198" Source="logo.jpg"/>
