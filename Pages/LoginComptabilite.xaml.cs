@@ -36,11 +36,11 @@ namespace GSB___JLAME
             {
                 string nomBD = "GSB PPE";//Nom de la BD SQL
 
-                string dataSource = "BTSWIN7-99\\SQLEXPRESS";//Erwann,Loic,Mohammad
+                string nomServeur = "BTSWIN7-99\\SQLEXPRESS";//Erwann,Loic,Mohammad
                                     //"BTSWIN7-99";//Jonathan
                                     //"ADMIN-PC\SQLSERVERPERSO";//Amélie
 
-                string connetionString = "Data Source=" + dataSource + ";Initial Catalog=" + nomBD + "; Integrated Security=true";//Paramètre de connection à la BD
+                string connetionString = "Data Source=" + nomServeur + ";Initial Catalog=" + nomBD + "; Integrated Security=true";//Paramètre de connection à la BD
                
                 SqlConnection cnn = new SqlConnection(connetionString);//Création de la connection à la BD SQL Server
                 cnn.Open();//Ouverture de la connection SQL
