@@ -35,7 +35,13 @@ namespace GSB___JLAME
             if (!connect)
             {
                 string nomBD = "GSB PPE";//Nom de la BD SQL
-                string dataSource = "BTSWIN7-99\\SQLEXPRESS";//à changer en fonction de l'ordinateur
+
+                                    /**** A COMPLETER ****/
+                string dataSource = "BTSWIN7-99\\SQLEXPRESS";//Erwann
+                                    //"BTSWIN7-99";//Jonathan
+                                    //"BTSWIN7-99\\SQLEXPRESS";//Loic
+                                    //"BTSWIN7-99\\SQLEXPRESS";//Amélie
+                                    //"BTSWIN7-99\\SQLEXPRESS";//Mohammad
                 string connetionString = "Data Source=" + dataSource + ";Initial Catalog=" + nomBD + "; Integrated Security=true";//Paramètre de connection à la BD
                
                 SqlConnection cnn = new SqlConnection(connetionString);//Création de la connection à la BD SQL Server
