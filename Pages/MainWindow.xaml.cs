@@ -18,21 +18,26 @@ namespace GSB___JLAME
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Mainwindow : Window
     {
-        public MainWindow()
+        public Mainwindow()
         {
             InitializeComponent();
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void Button_Click_Comptabilite(object sender, RoutedEventArgs e)
         {
-
+            var compta = new LoginComptabilite();
+            compta.Show();
+            this.Hide();
+            
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click_Visiteur(object sender, RoutedEventArgs e)
         {
-
+            var visiteur = new LoginVisiteur();
+            visiteur.Show();
+            this.Hide();
         }
     }
 }
