@@ -38,7 +38,7 @@ namespace GSB___JLAME
 
                 string nomServeur = "BTSWIN7-99\\SQLEXPRESS";//Erwann,Loic,Mohammad
                                     //"BTSWIN7-99";//Jonathan
-                                    //"ADMIN-PC\SQLSERVERPERSO";//Amélie
+                                    //"ADMIN-PC\\SQLSERVERPERSO";//Amélie
 
                 string connetionString = "Data Source=" + nomServeur + ";Initial Catalog=" + nomBD + "; Integrated Security=true";//Paramètre de connection à la BD
                
