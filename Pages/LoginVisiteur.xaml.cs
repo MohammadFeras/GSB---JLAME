@@ -37,12 +37,9 @@ namespace GSB___JLAME
             {
                 string nomBD = "GSB PPE"; //Nom de la BD SQL
 
-                                   /**** A COMPLETER ****/
-                string dataSource = "BTSWIN7-99\\SQLEXPRESS";//Erwann
+                string dataSource = "BTSWIN7-99\\SQLEXPRESS";//Erwann,Loic,Mohammad
                                   //"BTSWIN7-99";//Jonathan
-                                  //"BTSWIN7-99\\SQLEXPRESS";//Loic
-                                  //"BTSWIN7-99\\SQLEXPRESS";//Amélie
-                                  //"BTSWIN7-99\\SQLEXPRESS";//Mohammad
+                                  //"ADMIN-PC\SQLSERVERPERSO";//Amélie
 
                 string connetionString = "Data Source="+dataSource+";Initial Catalog="+nomBD+"; Integrated Security=true"; //Paramètre de connection à la BD
                 
