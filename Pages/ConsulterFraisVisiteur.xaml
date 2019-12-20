@@ -1,0 +1,63 @@
+﻿<Window x:Class="GSB___JLAME.Pages.ConsulterFraisVisiteur"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GSB___JLAME.Pages"
+        mc:Ignorable="d"
+        Title="ConsulterFraisVisiteur" Height="450" Width="800">
+    <Grid>
+        <Image HorizontalAlignment="Left" Height="130" VerticalAlignment="Top" Width="198" Source="logo.jpg"/>
+        <Rectangle HorizontalAlignment="Left" Height="494" Margin="198,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="692" Fill="#FF7AB6D8" Panel.ZIndex="-1"/>
+        <Label Content="Période" HorizontalAlignment="Left" Margin="222,10,0,0" VerticalAlignment="Top" Height="45" Width="203" FontSize="25"/>
+        <Label Content="Mois/Année:" HorizontalAlignment="Left" Margin="222,60,0,0" VerticalAlignment="Top" Height="34" Width="102" FontSize="15"/>
+        <TextBox HorizontalAlignment="Left" Margin="383,66,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Frais au forfait" HorizontalAlignment="Left" Margin="222,106,0,0" VerticalAlignment="Top" Width="117" FontSize="15"/>
+        <DataGrid Name="FraisAuForfait" AutoGenerateColumns="False"  Margin="222,141,10,197">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Repas midi"/>
+                <DataGridTextColumn Header="Nuitée"/>
+                <DataGridTextColumn Header="Etape"/>
+                <DataGridTextColumn Header="Km"/>
+                <DataGridTextColumn Header="Situation"/>
+                <DataGridTextColumn Header="Date opération"/>
+                <DataGridTextColumn Header="Remboursement"/>
+            </DataGrid.Columns>
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="{Binding Details}" Margin="10" />
+                    </Grid>
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
+        </DataGrid>
+        <Label Content="Hors forfait" HorizontalAlignment="Left" Margin="222,247,0,0" VerticalAlignment="Top" Width="117" FontSize="15"/>
+        <DataGrid Name="HorsForfait" AutoGenerateColumns="False"  Margin="222,282,10,56">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Date"/>
+                <DataGridTextColumn Header="Libellé"/>
+                <DataGridTextColumn Header="Montant"/>
+                <DataGridTextColumn Header="Situation"/>
+                <DataGridTextColumn Header="Date opération"/>
+            </DataGrid.Columns>
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Details}" Margin="10" />
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
+        </DataGrid>
+        <Label Content="Nb Justificatifs" HorizontalAlignment="Left" Margin="222,394,0,0" VerticalAlignment="Top" Width="117" FontSize="15"/>
+        <TextBox HorizontalAlignment="Left" Margin="383,402,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="60"/>
+
+
+    </Grid>
+</Window>
