@@ -10,7 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace GSB___JLAME.Pages
+namespace GSB___JLAME
 {
     /// <summary>
     /// Logique d'interaction pour ConsulterFraisVisiteur.xaml

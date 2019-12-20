@@ -48,6 +48,17 @@ namespace GSB___JLAME
                 cnn.Open(); //Ouverture de la connection SQL
                 connect = true; //Connection possible donc passe à true
 
+                /**** LANCER UNE REQUETE SQL ****/
+                string queryString = "SELECT login FROM Visiteur";
+                SqlCommand command = new SqlCommand(queryString, cnn);
+
+                /**** AFFICHAGE LE RESULTAT D'UNE REQUETE SQL ****/
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    MessageBox.Show(String.Format("{0}", reader[0]));
+                }
+
                 if (connect)
                 {
                     /**** TEST CONNEXION AVEC LOGIN ET MOT DE PASSE ****/
@@ -55,16 +66,6 @@ namespace GSB___JLAME
                     {
                         invalid.Content = " ";
 
-                        /**** LANCER UNE REQUETE SQL ****/
-                        string queryString = "SELECT login FROM Visiteur";
-                        SqlCommand command = new SqlCommand(queryString, cnn);
-
-                        /**** AFFICHAGE LE RESULTAT D'UNE REQUETE SQL ****/
-                        SqlDataReader reader = command.ExecuteReader();
-                        while (reader.Read())
-                        {
-                            MessageBox.Show(String.Format("{0}",reader[0]));                            
-                        }
                     }
                     else
                     {
