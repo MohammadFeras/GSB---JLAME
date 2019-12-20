@@ -26,6 +26,9 @@
     <Page Update="Pages\LoginComptabilite.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\ValiderFrais.xaml">
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
 
 </Project>

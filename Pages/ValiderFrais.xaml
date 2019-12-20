@@ -1,0 +1,47 @@
+﻿<Window x:Class="GSB___JLAME.ValiderFrais"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GSB___JLAME"
+        mc:Ignorable="d"
+        Title="ValiderFrais" Height="520" Width="890">
+    <Grid Background="White">
+        <Image HorizontalAlignment="Left" Height="130" VerticalAlignment="Top" Width="198" Source="logo.jpg"/>
+        <Rectangle HorizontalAlignment="Left" Height="494" Margin="203,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="687" Fill="#FF7AB6D8" Panel.ZIndex="-1"/>
+        <Label Content="Mois :" HorizontalAlignment="Left" Height="29" Margin="211,42,0,0" VerticalAlignment="Top" Width="57" FontSize="15"/>
+        <Label Content="Choisir le visiteur :" HorizontalAlignment="Left" Height="29" Margin="211,15,0,0" VerticalAlignment="Top" Width="133" FontSize="15"/>
+        <TextBox x:Name="Mois" HorizontalAlignment="Left" Height="29" Margin="349,42,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Mois_TextChanged"/>
+        <Label Content="Frais Au Forfait : " HorizontalAlignment="Left" Height="30" Margin="211,76,0,0" VerticalAlignment="Top" Width="125" FontSize="15" FontWeight="Bold"/>
+        <Label Content="Nb Justificatif :" HorizontalAlignment="Left" Height="29" Margin="424,375,0,0" VerticalAlignment="Top" Width="118" FontSize="15"/>
+        <TextBox x:Name="NbJustificatif" HorizontalAlignment="Left" Height="29" Margin="546,375,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="98" TextChanged="NbJustificatif_TextChanged"/>
+        <Button x:Name="Envoyer" Content="Envoyer" HorizontalAlignment="Left" Height="47" Margin="554,428,0,0" VerticalAlignment="Top" Width="145" FontSize="15"/>
+        <Button x:Name="Effacer" Content="Effacer" HorizontalAlignment="Left" Height="47" Margin="400,428,0,0" VerticalAlignment="Top" Width="145" FontSize="15"/>
+        <TreeView Margin="0,132,692,0" BorderBrush="White">
+            <TreeViewItem Header="Comptabilité" IsExpanded="True" FontWeight="Bold" FontSize="15">
+                <TreeViewItem Header="Validation des Frais" FontWeight="Normal" />
+                <TreeViewItem Header="Consulter les Frais" FontWeight="Normal" />
+            </TreeViewItem>
+        </TreeView>
+        <Label Content="Hors Forfait : " HorizontalAlignment="Left" Height="30" Margin="211,221,0,0" VerticalAlignment="Top" Width="125" FontSize="15" FontWeight="Bold"/>
+        <DataGrid Name="dataGrid1" IsReadOnly="True" AutoGenerateColumns="False" Margin="250,115,29,283" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="100" Header="Repas Midi"/>
+                <DataGridTextColumn Width="100" Header="Nuitée"/>
+                <DataGridTextColumn Width="100" Header="Etape"/>
+                <DataGridTextColumn Width="100" Header="Km"/>
+                <DataGridComboBoxColumn Width="100" Header="Situation"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="dataGrid1_Copy" IsReadOnly="True" AutoGenerateColumns="False" Margin="250,256,29,142" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="100" Header="Date"/>
+                <DataGridTextColumn Width="200" Header="Libellé"/>
+                <DataGridTextColumn Width="100" Header="Montant"/>
+                <DataGridComboBoxColumn Width="100" Header="Situation"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+    </Grid>
+</Window>

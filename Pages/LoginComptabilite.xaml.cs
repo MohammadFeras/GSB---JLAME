@@ -54,18 +54,9 @@ namespace GSB___JLAME
                     if (login != " " && passwordBoxComptabilite.Password.ToString() == "visiteur")//"passwordBoxVisiteur.Password" correspond au mdp rentré dans la passwordBox
                     {
                         invalid.Content = " ";
-
-                        /**** LANCER UNE REQUETE SQL ****/
-                        string queryString = "SELECT * FROM Etat";
-                        SqlCommand command = new SqlCommand(queryString, cnn);
-
-                        /**** AFFICHAGE LE RESULTAT D'UNE REQUETE SQL ****/
-                        SqlDataReader reader = command.ExecuteReader();
-                        while (reader.Read())
-                        {
-                            MessageBox.Show(String.Format("{0}, {1}",
-                                             reader[0], reader[1]));
-                        }
+                        var validerFrais = new ValiderFrais();
+                        validerFrais.Show();
+                        this.Hide();
                     }
                     else
                     {
