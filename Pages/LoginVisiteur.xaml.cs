@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -49,23 +50,20 @@ namespace GSB___JLAME
 
                 if (connect)
                 {
-                    MessageBox.Show("Vous êtes bien connecté à la BD " + nomBD );
-
                     /**** TEST CONNEXION AVEC LOGIN ET MOT DE PASSE ****/
                     if (login != " " && passwordBoxVisiteur.Password.ToString() == "visiteur") //"passwordBoxVisiteur.Password" correspond au mdp rentré dans la passwordBox
                     {
                         invalid.Content = " ";
 
                         /**** LANCER UNE REQUETE SQL ****/
-                        string queryString = "SELECT * FROM Etat";
+                        string queryString = "SELECT login FROM Visiteur";
                         SqlCommand command = new SqlCommand(queryString, cnn);
 
                         /**** AFFICHAGE LE RESULTAT D'UNE REQUETE SQL ****/
                         SqlDataReader reader = command.ExecuteReader();
                         while (reader.Read())
                         {
-                            MessageBox.Show(String.Format("{0}, {1}",
-                                            reader[0], reader[1]));
+                            MessageBox.Show(String.Format("{0}",reader[0]));                            
                         }
                     }
                     else
@@ -76,10 +74,15 @@ namespace GSB___JLAME
                 else
                 {
                     MessageBox.Show("Vous n'êtes pas connecté à la BD " + nomBD);
-                    connect = false;
                 }
+
             }
         }
+
+
+
+
+
 
         /**** RECUPERATION DU LOGIN RENTRE DANS LE TextBox ****/
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)

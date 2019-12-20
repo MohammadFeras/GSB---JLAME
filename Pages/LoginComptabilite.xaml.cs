@@ -75,7 +75,6 @@ namespace GSB___JLAME
                 else
                 {
                     MessageBox.Show("Vous n'êtes pas connecté à la BD " + nomBD);
-                    connect = false;
                 }                 
             }
         }
