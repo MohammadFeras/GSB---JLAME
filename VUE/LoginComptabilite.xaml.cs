@@ -30,10 +30,12 @@ namespace GSB___JLAME
 
         private void Button_Click_Connect(object sender, RoutedEventArgs e)
         {
+
             bool connect = false;//Reste à false si la connection à la BD est impossible et passe à true si la connection est possible
             
             if (!connect)
             {
+
                 string nomBD = "GSB PPE";//Nom de la BD SQL
 
                 string nomServeur = "BTSWIN7-99\\SQLEXPRESS";//Erwann,Loic,Mohammad
@@ -54,6 +56,7 @@ namespace GSB___JLAME
                     if (login != " " && passwordBoxComptabilite.Password.ToString() == "visiteur")//"passwordBoxVisiteur.Password" correspond au mdp rentré dans la passwordBox
                     {
                         invalid.Content = " ";
+
                         var validerFrais = new ValiderFrais();
                         validerFrais.Show();
                         this.Hide();
