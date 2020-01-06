@@ -40,10 +40,7 @@ namespace GSB___JLAME
             {
                 string password = Connexion.RequestMDP(login); //Requête test mot de passe
 
-                //TODO ôter les blancs à la fin de password
-                //if (password.StartsWith(passwordBoxVisiteur.Password))
-
-                    if (passwordBoxVisiteur.Password.ToString().Equals(password))
+                if (passwordBoxVisiteur.Password.ToString().Equals(password))
                 {
                     invalid.Content = " ";
 

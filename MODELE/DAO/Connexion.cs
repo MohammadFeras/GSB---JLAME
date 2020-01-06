@@ -58,7 +58,8 @@ namespace GSB___JLAME
             SqlDataReader dataReader = command.ExecuteReader();
             while (dataReader.Read())
             {
-                toReturn.Add(dataReader[0].ToString());
+                string trim = dataReader[0].ToString().Trim();
+                toReturn.Add(trim);
             }
             dataReader.Close();
 
