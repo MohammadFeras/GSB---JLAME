@@ -36,39 +36,50 @@ namespace GSB___JLAME
 
         private Connexion() { }
 
-        public static bool RequestLogin(string login)
+        public static bool RequestLogin(string visiteur)
         {
-            bool valid = false;
             SqlCommand command = Connexion.GetInstance().CreateCommand();
-            command.CommandText = "SELECT login FROM Visiteur";
+            command.CommandText = "SELECT login FROM Visiteur WHERE login ='" + visiteur + "'";
 
             // Lecture des résultats
             SqlDataReader dataReader = command.ExecuteReader();
+            bool trouve = dataReader.Read();
+            dataReader.Close();
+            return trouve;
+        }
 
+        public static List<string> RequestCompleteComboBoxLogin()
+        {
+            List<string> toReturn = new List<string>();
+            SqlCommand command = Connexion.GetInstance().CreateCommand();
+            command.CommandText = "SELECT prenom FROM Visiteur";
+
+            // Lecture des résultats
+            SqlDataReader dataReader = command.ExecuteReader();
             while (dataReader.Read())
             {
-                if (login.Equals(String.Format("{0}", dataReader[0])))
-                {
-                    valid = true;
-                }
+                toReturn.Add(dataReader[0].ToString());
             }
             dataReader.Close();
-            return valid;
+
+            return toReturn;
         }
 
         public static string RequestMDP(string visiteur)
         {
-            string mdp = " ";
-
             SqlCommand command = Connexion.GetInstance().CreateCommand();
-            command.CommandText = "SELECT mdp FROM Visiteur WHERE login ='" + visiteur + "'";
+
+            string requete = "SELECT mdp FROM Visiteur WHERE login ='" + visiteur + "'";
+            command.CommandText = requete;
 
             // Lecture des résultats
             SqlDataReader dataReader = command.ExecuteReader();
+            string mdp = " ";
 
             if (dataReader.Read())
             {
-                    mdp = String.Format("{0}", dataReader[0]);
+                mdp = String.Format("{0}", dataReader[0]);
+                mdp = mdp.Trim();
             }
             dataReader.Close();
             return mdp;

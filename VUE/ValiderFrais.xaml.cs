@@ -26,14 +26,26 @@ namespace GSB___JLAME
         public ValiderFrais()
         {
             InitializeComponent();
+            RemplirComboBoxName();
         }
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        public void RemplirComboBoxName()
+        {
+            //**** REMPLIR COMBOBOX NAME ****//
+            List<string> item = Connexion.RequestCompleteComboBoxLogin();
+
+            foreach (var name in item)
+            {
+                SelectName.Items.Add(name);
+            }
+        }
+
+        private void Effacer_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void NbJustificatif_TextChanged(object sender, TextChangedEventArgs e)
+        private void Envoyer_Click(object sender, RoutedEventArgs e)
         {
 
         }
@@ -43,37 +55,17 @@ namespace GSB___JLAME
 
         }
 
-        private void RepasMidi_TextChanged(object sender, TextChangedEventArgs e)
+        private void SelectName_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
 
-        private void Nuite_TextChanged(object sender, TextChangedEventArgs e)
+        private void NbJustificatif_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
 
-        private void Etape_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void Km_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void date_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void libelle_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void montant_TextChanged(object sender, TextChangedEventArgs e)
+        private void dataGrid1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

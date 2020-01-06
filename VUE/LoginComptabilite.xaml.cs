@@ -31,24 +31,34 @@ namespace GSB___JLAME
         private void Button_Click_Connect(object sender, RoutedEventArgs e)
         {
             /**** LANCEMENT REQUETE ****/
-            bool loginValid = Connexion.RequestLogin(login); //Requête Remplissage d'une tableau login
-            string password = Connexion.RequestMDP(login); //Requête test mot de passe
+            bool loginValid = Connexion.RequestLogin(login); //Requête Test Login            
 
             /**** TEST CONNEXION AVEC LOGIN ET MOT DE PASSE ****/
-            if (loginValid && passwordBoxComptabilite.Password.ToString() == password) //"passwordBoxVisiteur.Password" correspond au mdp rentré dans la passwordBox
+            if (loginValid)
             {
-                invalid.Content = " ";
+                string password = Connexion.RequestMDP(login); //Requête test mot de passe
 
-                /**** LANCEMENT DE LA PAGE ValiderFrais ****/
-                var consulterFrais= new ConsulterFraisVisiteur();
-                consulterFrais.Show();
-                this.Hide();
+                //TODO ôter les blancs à la fin de password
+                //if (password.StartsWith(passwordBoxVisiteur.Password))
+
+                if (passwordBoxComptabilite.Password.ToString().Equals(password))
+                {
+                    invalid.Content = " ";
+
+                    /**** LANCEMENT DE LA PAGE ValiderFrais ****/
+                    var validFrais = new ValiderFrais();
+                    validFrais.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    invalid.Content = "Mot de passe incorrect"; //S'affiche uniquement si le test de connexion n'est pas valide
+                }
             }
             else
             {
-                invalid.Content = "Login ou mot de passe incorrect"; //S'affiche uniquement si le test de connexion n'est pas valide                       
+                invalid.Content = "Login incorrect"; //S'affiche uniquement si le test de connexion n'est pas valide                       
             }
-
         }
 
         /**** RECUPERATION DU LOGIN RENTRE DANS LE TextBox ****/

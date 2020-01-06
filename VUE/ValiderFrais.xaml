@@ -15,8 +15,8 @@
         <Label Content="Frais Au Forfait : " HorizontalAlignment="Left" Height="30" Margin="211,76,0,0" VerticalAlignment="Top" Width="125" FontSize="15" FontWeight="Bold"/>
         <Label Content="Nb Justificatif :" HorizontalAlignment="Left" Height="29" Margin="424,375,0,0" VerticalAlignment="Top" Width="118" FontSize="15"/>
         <TextBox x:Name="NbJustificatif" HorizontalAlignment="Left" Height="29" Margin="546,375,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="98" TextChanged="NbJustificatif_TextChanged"/>
-        <Button x:Name="Envoyer" Content="Envoyer" HorizontalAlignment="Left" Height="47" Margin="554,428,0,0" VerticalAlignment="Top" Width="145" FontSize="15"/>
-        <Button x:Name="Effacer" Content="Effacer" HorizontalAlignment="Left" Height="47" Margin="400,428,0,0" VerticalAlignment="Top" Width="145" FontSize="15"/>
+        <Button x:Name="Envoyer" Content="Envoyer" HorizontalAlignment="Left" Height="47" Margin="554,428,0,0" VerticalAlignment="Top" Width="145" FontSize="15" Click="Envoyer_Click"/>
+        <Button x:Name="Effacer" Content="Effacer" HorizontalAlignment="Left" Height="47" Margin="400,428,0,0" VerticalAlignment="Top" Width="145" FontSize="15" Click="Effacer_Click"/>
         <TreeView Margin="0,132,692,0" BorderBrush="White">
             <TreeViewItem Header="Comptabilité" IsExpanded="True" FontWeight="Bold" FontSize="15">
                 <TreeViewItem Header="Validation des Frais" FontWeight="Normal" />
@@ -24,7 +24,7 @@
             </TreeViewItem>
         </TreeView>
         <Label Content="Hors Forfait : " HorizontalAlignment="Left" Height="30" Margin="211,221,0,0" VerticalAlignment="Top" Width="125" FontSize="15" FontWeight="Bold"/>
-        <DataGrid Name="dataGrid1" IsReadOnly="True" AutoGenerateColumns="False" Margin="250,115,29,283" >
+        <DataGrid Name="dataGrid1" IsReadOnly="True" AutoGenerateColumns="False" Margin="250,115,29,283" SelectionChanged="dataGrid1_SelectionChanged" >
             <DataGrid.Columns>
                 <DataGridTextColumn Width="100" Header="Repas Midi"/>
                 <DataGridTextColumn Width="100" Header="Nuitée"/>
@@ -41,6 +41,7 @@
                 <DataGridComboBoxColumn Width="100" Header="Situation"/>
             </DataGrid.Columns>
         </DataGrid>
+        <ComboBox x:Name="SelectName" HorizontalAlignment="Left" Height="27" Margin="349,14,0,0" VerticalAlignment="Top" Width="120" Text="Select Name" SelectionChanged="SelectName_SelectionChanged" IsEditable="True" IsReadOnly="True"/>
 
 
     </Grid>
