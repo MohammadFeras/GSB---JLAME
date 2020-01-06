@@ -33,31 +33,16 @@ namespace GSB___JLAME
         {
             
             /**** LANCEMENT REQUETE ****/
-            bool loginValid = DAOVisiteur.RequestLogin(login); //Requête Test Login            
-            MessageBox.Show("Hello");
+            string text = DAOComptabilite.RequestLogin(login); //Requête Test Login    
+            invalid.Content = text;
+
             /**** TEST CONNEXION AVEC LOGIN ET MOT DE PASSE ****/
-            if (loginValid)
+            if (text == " ")
             {
-                string password = DAOVisiteur.RequestMDP(login); //Requête test mot de passe
-
-                if (passwordBoxComptabilite.Password.ToString().Equals(password))
-                {
-                    invalid.Content = " ";
-
-                    /**** LANCEMENT DE LA PAGE ValiderFrais ****/
-                    var validFrais = new ValiderFrais();
-                    validFrais.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    invalid.Content = "Mot de passe incorrect"; //S'affiche uniquement si le test de connexion n'est pas valide
-                }
-            }
-            else
-            {
-                invalid.Content = "Login incorrect"; //S'affiche uniquement si le test de connexion n'est pas valide                       
-            }
+                var validFrais = new ValiderFrais();
+                validFrais.Show();
+                this.Hide();
+            }           
         }
 
         /**** RECUPERATION DU LOGIN RENTRE DANS LE TextBox ****/

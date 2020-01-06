@@ -7,19 +7,32 @@ namespace GSB___JLAME
 {
     class DAOComptabilite
     {
-        public static bool RequestLogin(string comptable)
+        public static string RequestLogin(string comptable)
         {
+            string text = " ";
             SqlCommand command = Connexion.GetInstance().CreateCommand();
             command.CommandText = "SELECT login FROM Visiteur WHERE login ='" + comptable + "'";
 
             // Lecture des résultats
             SqlDataReader dataReader = command.ExecuteReader();
             bool trouve = dataReader.Read();
+            if (dataReader.Read())
+            {
+                bool valid = RequestMDP(comptable);
+                if (valid)
+                {
+                    text = " ";
+                }
+            }
+            else
+            {
+                text = "Login ou mot de passe invalide";
+            }
             dataReader.Close();
-            return trouve;
+            return text;
         }
 
-        public static string RequestMDP(string comptable)
+        public static bool RequestMDP(string comptable)
         {
             SqlCommand command = Connexion.GetInstance().CreateCommand();
 
@@ -28,15 +41,9 @@ namespace GSB___JLAME
 
             // Lecture des résultats
             SqlDataReader dataReader = command.ExecuteReader();
-            string mdp = " ";
-
-            if (dataReader.Read())
-            {
-                mdp = String.Format("{0}", dataReader[0]);
-                mdp = mdp.Trim();
-            }
+            bool trouve = dataReader.Read();            
             dataReader.Close();
-            return mdp;
+            return trouve;
         }
     }
 }
