@@ -5,8 +5,8 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:GSB___JLAME.VUE"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="SaisieFrais">
+      d:DesignHeight="450" d:DesignWidth="800" 
+      Title="SaisieFrais" >
 
     <Grid Background="White">
         <Image HorizontalAlignment="Left" Height="130" VerticalAlignment="Top" Width="198" Source="logo.jpg"/>
@@ -28,7 +28,7 @@
         <Label Content="Kms :" HorizontalAlignment="Left" Margin="216,214,0,0" VerticalAlignment="Top"/>
         <Label Content="Hors forfait :" HorizontalAlignment="Left" Margin="216,240,0,0" VerticalAlignment="Top" FontSize="20"/>
         <DatePicker HorizontalAlignment="Left" Margin="216,279,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="378,279,0,0" Text="Libellé" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextAlignment="Center"/>
+        <TextBox HorizontalAlignment="Left" Margin="378,279,0,0" Text="Libellé" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextAlignment="Center" TextChanged="TextBox_TextChanged"/>
         <TextBox HorizontalAlignment="Left" Margin="516,279,0,0" Text="Montant" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button Content="Valider" HorizontalAlignment="Left" Margin="498,398,0,0" VerticalAlignment="Top" Width="100"/>
         <Button Content="+" HorizontalAlignment="Left" Margin="650,280,0,0" VerticalAlignment="Top" Width="20"/>

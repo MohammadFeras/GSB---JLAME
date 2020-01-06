@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+
 using MySql.Data.MySqlClient;
 
 namespace GSB___JLAME
@@ -27,16 +28,17 @@ namespace GSB___JLAME
         }
 
         string login = " ";
-
+        
         private void Button_Click_Connect(object sender, RoutedEventArgs e)
         {
+            
             /**** LANCEMENT REQUETE ****/
-            bool loginValid = Connexion.RequestLogin(login); //Requête Test Login            
-
+            bool loginValid = DAOVisiteur.RequestLogin(login); //Requête Test Login            
+            MessageBox.Show("Hello");
             /**** TEST CONNEXION AVEC LOGIN ET MOT DE PASSE ****/
             if (loginValid)
             {
-                string password = Connexion.RequestMDP(login); //Requête test mot de passe
+                string password = DAOVisiteur.RequestMDP(login); //Requête test mot de passe
 
                 if (passwordBoxComptabilite.Password.ToString().Equals(password))
                 {
@@ -61,7 +63,8 @@ namespace GSB___JLAME
         /**** RECUPERATION DU LOGIN RENTRE DANS LE TextBox ****/
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            login = sender.ToString();
+            /**** RECUPERATION DU LOGIN RENTRE DANS LE TextBox ****/
+            login = ((TextBox)sender).Text;
         }
 
         /**** CHANGEMENT DE PAGE GRACE A UN BOUTON ****/

@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+
 using MySql.Data.MySqlClient;
 
 namespace GSB___JLAME
@@ -32,7 +33,7 @@ namespace GSB___JLAME
         public void RemplirComboBoxName()
         {
             //**** REMPLIR COMBOBOX NAME ****//
-            List<string> item = Connexion.RequestCompleteComboBoxLogin();
+            List<string> item = DAOVisiteur.RequestCompleteComboBoxLogin();
 
             foreach (var name in item)
             {
@@ -66,6 +67,11 @@ namespace GSB___JLAME
         }
 
         private void dataGrid1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void dataGrid1_Copy_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

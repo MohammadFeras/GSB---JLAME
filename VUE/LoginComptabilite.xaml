@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GSB___JLAME"
         mc:Ignorable="d"
-        Title="LoginComptabilite" Height="501" Width="890">
+        Title="LoginComptabilite" Height="501" Width="890" ResizeMode="NoResize" >
     <Grid Background="White" Height="501">
         <Image HorizontalAlignment="Left" Height="130" VerticalAlignment="Top" Width="198" Source="logo.jpg"/>
         <TextBox HorizontalAlignment="Left" Margin="486,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" BorderBrush="Black" Height="30" TextChanged="TextBox_TextChanged"/>
