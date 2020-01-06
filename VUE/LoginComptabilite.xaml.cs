@@ -30,47 +30,25 @@ namespace GSB___JLAME
 
         private void Button_Click_Connect(object sender, RoutedEventArgs e)
         {
+            /**** LANCEMENT REQUETE ****/
+            bool loginValid = Connexion.RequestLogin(login); //Requête Remplissage d'une tableau login
+            string password = Connexion.RequestMDP(login); //Requête test mot de passe
 
-            bool connect = false;//Reste à false si la connection à la BD est impossible et passe à true si la connection est possible
-            
-            if (!connect)
+            /**** TEST CONNEXION AVEC LOGIN ET MOT DE PASSE ****/
+            if (loginValid && passwordBoxComptabilite.Password.ToString() == password) //"passwordBoxVisiteur.Password" correspond au mdp rentré dans la passwordBox
             {
+                invalid.Content = " ";
 
-                string nomBD = "GSB PPE";//Nom de la BD SQL
-
-                string nomServeur = "BTSWIN7-99\\SQLEXPRESS";//Erwann,Loic,Mohammad
-                                    //"BTSWIN7-99";//Jonathan
-                                    //"ADMIN-PC\\SQLSERVERPERSO";//Amélie
-
-                string connetionString = "Data Source=" + nomServeur + ";Initial Catalog=" + nomBD + "; Integrated Security=true";//Paramètre de connection à la BD
-               
-                SqlConnection cnn = new SqlConnection(connetionString);//Création de la connection à la BD SQL Server
-                cnn.Open();//Ouverture de la connection SQL
-                connect = true;//Connection possible donc passe à true
-
-                if (connect)
-                {
-                    MessageBox.Show("Vous êtes bien connecté à la BD " + nomBD);
-
-                    /**** TEST CONNEXION AVEC LOGIN ET MOT DE PASSE ****/
-                    if (login != " " && passwordBoxComptabilite.Password.ToString() == "visiteur")//"passwordBoxVisiteur.Password" correspond au mdp rentré dans la passwordBox
-                    {
-                        invalid.Content = " ";
-
-                        var validerFrais = new ValiderFrais();
-                        validerFrais.Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        invalid.Content = "Login ou mot de passe incorrect"; //s'affiche uniquement si le test de connexion n'est pas valide
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Vous n'êtes pas connecté à la BD " + nomBD);
-                }                 
+                /**** LANCEMENT DE LA PAGE ValiderFrais ****/
+                var consulterFrais= new ConsulterFraisVisiteur();
+                consulterFrais.Show();
+                this.Hide();
             }
+            else
+            {
+                invalid.Content = "Login ou mot de passe incorrect"; //S'affiche uniquement si le test de connexion n'est pas valide                       
+            }
+
         }
 
         /**** RECUPERATION DU LOGIN RENTRE DANS LE TextBox ****/

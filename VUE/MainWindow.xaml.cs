@@ -29,15 +29,15 @@ namespace GSB___JLAME
         {
             var compta = new LoginComptabilite();
             compta.Show();
-            this.Hide();
-            
+            this.Hide();            
         }
-
+        
         private void Button_Click_Visiteur(object sender, RoutedEventArgs e)
         {
             var visiteur = new LoginVisiteur();
             visiteur.Show();
             this.Hide();
         }
+
     }
 }

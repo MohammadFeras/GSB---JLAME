@@ -24,9 +24,6 @@ namespace GSB___JLAME
     {
         string login = " ";
 
-        SqlConnection cnn;
-
-
         public LoginVisiteur()
         {
             InitializeComponent();
