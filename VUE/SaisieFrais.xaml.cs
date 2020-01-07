@@ -11,12 +11,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GSB___JLAME.VUE
+namespace GSB___JLAME
 {
-    /// <summary>
-    /// Logique d'interaction pour SaisieFrais.xaml
-    /// </summary>
-    public partial class SaisieFrais : Page
+
+    public partial class SaisieFrais : Window
     {
         public SaisieFrais()
         {
@@ -42,14 +40,5 @@ namespace GSB___JLAME.VUE
             this.Hide();
         }
 
-        private void Show()
-        {
-            throw new NotImplementedException();
-        }
-
-        private void Hide()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

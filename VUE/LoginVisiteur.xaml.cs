@@ -39,7 +39,7 @@ namespace GSB___JLAME
 
             if (text.Equals(""))
             {
-                var validFrais = new ValiderFrais();
+                var validFrais = new SaisieFrais();
                 validFrais.Show();
                 this.Hide();
             }
