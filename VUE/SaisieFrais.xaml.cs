@@ -25,7 +25,31 @@ namespace GSB___JLAME.VUE
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+    
+        }
 
+        private void Button_Click_Comptabilite(object sender, RoutedEventArgs e)
+        {
+            var consulter = new ConsulterFraisVisiteur();
+            consulter.Show();
+            this.Hide();
+        }
+
+        private void Button_Click_Visiteur(object sender, RoutedEventArgs e)
+        {
+            var saisie = new SaisieFrais();
+            saisie.Show();
+            this.Hide();
+        }
+
+        private void Show()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Hide()
+        {
+            throw new NotImplementedException();
         }
     }
 }
