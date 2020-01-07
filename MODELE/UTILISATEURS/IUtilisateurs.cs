@@ -4,7 +4,18 @@ using System.Text;
 
 namespace GSB___JLAME.MODELE.UTILISATEURS
 {
-    interface IUtilisateurs
+   public interface IUtilisateurs
     {
+        string Login
+        {
+            get;
+            set;
+        }
+
+        string Mdp
+        {
+            get;
+            set;
+        }
     }
 }

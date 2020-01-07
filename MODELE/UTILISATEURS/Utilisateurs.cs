@@ -4,7 +4,27 @@ using System.Text;
 
 namespace GSB___JLAME.MODELE.UTILISATEURS
 {
-    class Utilisateurs
+    public abstract class Utilisateurs : IUtilisateurs
     {
+        protected string mdp;
+        protected string login;
+
+        public string Login
+        {
+            get { return login; }
+            set { Login = value; }
+        }
+
+        public string Mdp
+        {
+            get { return mdp; }
+            set { mdp = value; }
+        }
+
+        public Utilisateurs(string login)
+        {
+            this.login = login;
+            this.mdp = mdp;
+        }
     }
 }
