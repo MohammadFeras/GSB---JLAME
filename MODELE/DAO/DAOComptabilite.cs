@@ -25,7 +25,7 @@ namespace GSB___JLAME
                 {                    
                     if (!String.Format("{0}", dataReaderMdp[0]).Trim().Equals(mdp))                    
                     {
-                        text = "mot de passe invalide";
+                        text = "Mot de passe invalide";
                     }
                 }
                 dataReaderMdp.Close();
@@ -35,6 +35,20 @@ namespace GSB___JLAME
                 text = "Login inconnu";
             }
             return text;
+        }
+
+        public static List<string> AllSituation()
+        {
+            List<string> situation = new List<string>(4);
+            SqlCommand commandSituation = Connexion.GetInstance().CreateCommand();
+            commandSituation.CommandText = "SELECT libelle FROM Etat";
+            SqlDataReader dataReaderSituation = commandSituation.ExecuteReader();
+
+            while (dataReaderSituation.Read())
+            {
+                situation.Add(String.Format("{0}", dataReaderSituation[0]));
+            }
+             return situation;
         }
     }
 }

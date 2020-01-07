@@ -9,7 +9,6 @@ namespace GSB___JLAME
     {
         private static SqlConnection LaConnexion { get; set; } = null;
 
-
         public static SqlConnection GetInstance()
         {
             // Préparation de la connexion à la base de données

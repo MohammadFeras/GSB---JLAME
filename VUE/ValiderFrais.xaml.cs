@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Security;
@@ -15,7 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using GSB___JLAME.VUEMODELE;
 using MySql.Data.MySqlClient;
 
 namespace GSB___JLAME
@@ -23,22 +24,37 @@ namespace GSB___JLAME
 
     public partial class ValiderFrais : Window
     {
+        private FicheFraisVueModele FicheFraisVue;
+        private string selectedName;
 
         public ValiderFrais()
         {
             InitializeComponent();
             RemplirComboBoxName();
+            RemplirComboBoxSituation();
+            FicheFraisVue = new FicheFraisVueModele();
+            this.DataContext = FicheFraisVue;
         }
 
         public void RemplirComboBoxName()
         {
             //**** REMPLIR COMBOBOX NAME ****//
             List<string> item = DAOVisiteur.RequestCompleteComboBoxLogin();
+            SelectName.ItemsSource = item;
+        }
 
-            foreach (var name in item)
-            {
-                SelectName.Items.Add(name);
-            }
+        public void RemplirComboBoxSituation()
+        {
+            //**** REMPLIR COMBOBOX Situation ****//
+            List<string> item = DAOComptabilite.AllSituation();
+            SelectSituationForfait.ItemsSource = item;
+            SelectSituationHorsForfait.ItemsSource = item;
+        }
+
+        private void SelectName_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            selectedName = SelectName.SelectedItem.ToString();
+            Forfait.ItemsSource = FicheFraisVue.Complete();
         }
 
         private void Effacer_Click(object sender, RoutedEventArgs e)
@@ -56,22 +72,19 @@ namespace GSB___JLAME
 
         }
 
-        private void SelectName_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
+        
 
         private void NbJustificatif_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
 
-        private void dataGrid1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Forfait_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
 
-        private void dataGrid1_Copy_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void HorsForfait_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

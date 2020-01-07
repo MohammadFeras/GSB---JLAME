@@ -6,14 +6,15 @@
         xmlns:local="clr-namespace:GSB___JLAME"
         mc:Ignorable="d"
         Title="ValiderFrais" Height="520" Width="890" ResizeMode="NoResize" >
+
     <Grid Background="White">
         <Image HorizontalAlignment="Left" Height="130" VerticalAlignment="Top" Width="198" Source="logo.jpg"/>
-        <Rectangle HorizontalAlignment="Left" Height="494" Margin="203,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="687" Fill="#FF7AB6D8" Panel.ZIndex="-1"/>
+        <Rectangle HorizontalAlignment="Left" Height="494" Margin="203,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="687" Fill="LightGreen" Panel.ZIndex="-1"/>
         <Label Content="Mois :" HorizontalAlignment="Left" Height="29" Margin="211,42,0,0" VerticalAlignment="Top" Width="57" FontSize="15"/>
         <Label Content="Choisir le visiteur :" HorizontalAlignment="Left" Height="29" Margin="211,15,0,0" VerticalAlignment="Top" Width="133" FontSize="15"/>
         <Label Content="Frais Au Forfait : " HorizontalAlignment="Left" Height="30" Margin="211,76,0,0" VerticalAlignment="Top" Width="125" FontSize="15" FontWeight="Bold"/>
-        <Label Content="Nb Justificatif :" HorizontalAlignment="Left" Height="29" Margin="424,375,0,0" VerticalAlignment="Top" Width="118" FontSize="15"/>
-        <TextBox x:Name="NbJustificatif" HorizontalAlignment="Left" Height="29" Margin="546,375,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="98" TextChanged="NbJustificatif_TextChanged"/>
+        <Label Content="Nb Justificatif :" HorizontalAlignment="Left" Height="29" Margin="350,375,0,0" VerticalAlignment="Top" Width="118" FontSize="15"/>
+        <TextBox x:Name="NbJustificatif" HorizontalAlignment="Left" Height="29" Margin="472,375,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="98" TextChanged="NbJustificatif_TextChanged"/>
         <Button x:Name="Envoyer" Content="Envoyer" HorizontalAlignment="Left" Height="47" Margin="554,428,0,0" VerticalAlignment="Top" Width="145" FontSize="15" Click="Envoyer_Click"/>
         <Button x:Name="Effacer" Content="Effacer" HorizontalAlignment="Left" Height="47" Margin="400,428,0,0" VerticalAlignment="Top" Width="145" FontSize="15" Click="Effacer_Click"/>
         <TreeView Margin="0,132,692,0" BorderBrush="White">
@@ -23,25 +24,27 @@
             </TreeViewItem>
         </TreeView>
         <Label Content="Hors Forfait : " HorizontalAlignment="Left" Height="30" Margin="211,221,0,0" VerticalAlignment="Top" Width="125" FontSize="15" FontWeight="Bold"/>
-        <DataGrid Name="dataGrid1" IsReadOnly="True" AutoGenerateColumns="False" Margin="250,115,29,283" SelectionChanged="dataGrid1_SelectionChanged" >
+        <DataGrid Name="Forfait" IsReadOnly="True" AutoGenerateColumns="False" Margin="221,113,166,285" SelectionChanged="Forfait_SelectionChanged" >
             <DataGrid.Columns>
-                <DataGridTextColumn Width="100" Header="Repas Midi"/>
-                <DataGridTextColumn Width="100" Header="Nuitée"/>
-                <DataGridTextColumn Width="100" Header="Etape"/>
-                <DataGridTextColumn Width="100" Header="Km"/>
-                <DataGridComboBoxColumn Width="100" Header="Situation"/>
+                <DataGridTextColumn Width="100" Header="Repas Midi" Binding="{Binding Repas}"/>
+                <DataGridTextColumn Width="100" Header="Nuitée" Binding="{Binding Nuitee}"/>
+                <DataGridTextColumn Width="100" Header="Etape" Binding="{Binding Etape}"/>
+                <DataGridTextColumn Width="100" Header="Km" Binding="{Binding Km}"/>
+                <DataGridTextColumn Width="100" Header="Etat Fiche" Binding="{Binding Situation}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid x:Name="dataGrid1_Copy" IsReadOnly="True" AutoGenerateColumns="False" Margin="250,256,29,142" SelectionChanged="dataGrid1_Copy_SelectionChanged" >
+        <DataGrid x:Name="horsForfait" IsReadOnly="True" AutoGenerateColumns="False" Margin="221,264,166,134" SelectionChanged="HorsForfait_SelectionChanged" >
             <DataGrid.Columns>
-                <DataGridTextColumn Width="100" Header="Date"/>
-                <DataGridTextColumn Width="200" Header="Libellé"/>
-                <DataGridTextColumn Width="100" Header="Montant"/>
-                <DataGridComboBoxColumn Width="100" Header="Situation"/>
+                <DataGridTextColumn Width="100" Header="Date" Binding="{Binding Date}"/>
+                <DataGridTextColumn Width="200" Header="Libellé" Binding="{Binding Libelle}"/>
+                <DataGridTextColumn Width="100" Header="Montant" Binding="{Binding Montant}"/>
+                <DataGridTextColumn Width="100" Header="Etat" Binding="{Binding SituationHorsForfait}" />
             </DataGrid.Columns>
         </DataGrid>
         <ComboBox x:Name="SelectName" HorizontalAlignment="Left" Height="27" Margin="349,14,0,0" VerticalAlignment="Top" Width="120" Text="Select Name" SelectionChanged="SelectName_SelectionChanged" IsEditable="True" IsReadOnly="True"/>
         <DatePicker HorizontalAlignment="Left" Margin="349,46,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="SelectSituationForfait" HorizontalAlignment="Left" Height="30" Margin="729,151,0,0" VerticalAlignment="Top" Width="127" Text="Selectionner Etat" IsEditable="True" IsReadOnly="True"></ComboBox>
+        <ComboBox x:Name="SelectSituationHorsForfait" HorizontalAlignment="Left" Height="30" Margin="729,303,0,0" VerticalAlignment="Top" Width="127" Text="Selectionner Etat" IsEditable="True" IsReadOnly="True"/>
 
 
     </Grid>

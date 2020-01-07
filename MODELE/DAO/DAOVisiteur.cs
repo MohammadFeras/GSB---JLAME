@@ -25,7 +25,7 @@ namespace GSB___JLAME
                 {
                     if (!String.Format("{0}", dataReaderMdp[0]).Trim().Equals(mdp))
                     {
-                        text = "mot de passe invalide";
+                        text = "Mot de passe invalide";
                     }
                 }
                 dataReaderMdp.Close();
