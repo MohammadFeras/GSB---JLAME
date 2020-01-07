@@ -86,5 +86,17 @@ namespace GSB___JLAME
         {
 
         }
+
+        private void LogOut_Click(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = new Mainwindow();
+            mainWindow.Show();
+            this.Hide();
+        }
+
+        private void ConsulterFrais_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

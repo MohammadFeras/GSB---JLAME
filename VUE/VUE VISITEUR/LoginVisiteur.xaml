@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="LoginVisiteur" Height="501" Width="890" ResizeMode="NoResize" >
     <Grid Background="White">
-        <Image HorizontalAlignment="Left" Height="130" VerticalAlignment="Top" Width="198" Source="logo.jpg"/>
+        <Image HorizontalAlignment="Left" Height="130" VerticalAlignment="Top" Width="198" Source="../photos/logo.jpg"/>
         <TextBox HorizontalAlignment="Left" Margin="487,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" BorderBrush="Black" Height="30" TextChanged="TextBox_TextChanged"/>
         <Label Content="Login : " HorizontalAlignment="Left" Margin="381,192,0,0" VerticalAlignment="Top" FontSize="30" RenderTransformOrigin="0.881,0.535"/>
         <Label Content="Mot De Passe  : " HorizontalAlignment="Left" Margin="265,285,0,0" VerticalAlignment="Top" FontSize="30"/>

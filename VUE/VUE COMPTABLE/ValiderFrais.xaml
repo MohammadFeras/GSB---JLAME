@@ -8,8 +8,8 @@
         Title="ValiderFrais" Height="520" Width="890" ResizeMode="NoResize" >
 
     <Grid Background="White">
-        <Image HorizontalAlignment="Left" Height="130" VerticalAlignment="Top" Width="198" Source="logo.jpg"/>
-        <Rectangle HorizontalAlignment="Left" Height="494" Margin="203,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="687" Fill="LightGreen" Panel.ZIndex="-1"/>
+        <Image HorizontalAlignment="Left" Height="130" VerticalAlignment="Top" Width="198" Source="../photos/logo.jpg"/>
+        <Rectangle HorizontalAlignment="Left" Height="504" Margin="203,0,0,0" Stroke="Black" VerticalAlignment="Center" Width="687" Fill="LightGreen" Panel.ZIndex="-1"/>
         <Label Content="Mois :" HorizontalAlignment="Left" Height="29" Margin="211,42,0,0" VerticalAlignment="Top" Width="57" FontSize="15"/>
         <Label Content="Choisir le visiteur :" HorizontalAlignment="Left" Height="29" Margin="211,15,0,0" VerticalAlignment="Top" Width="133" FontSize="15"/>
         <Label Content="Frais Au Forfait : " HorizontalAlignment="Left" Height="30" Margin="211,76,0,0" VerticalAlignment="Top" Width="125" FontSize="15" FontWeight="Bold"/>
@@ -17,12 +17,6 @@
         <TextBox x:Name="NbJustificatif" HorizontalAlignment="Left" Height="29" Margin="472,375,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="98" TextChanged="NbJustificatif_TextChanged"/>
         <Button x:Name="Envoyer" Content="Envoyer" HorizontalAlignment="Left" Height="47" Margin="554,428,0,0" VerticalAlignment="Top" Width="145" FontSize="15" Click="Envoyer_Click"/>
         <Button x:Name="Effacer" Content="Effacer" HorizontalAlignment="Left" Height="47" Margin="400,428,0,0" VerticalAlignment="Top" Width="145" FontSize="15" Click="Effacer_Click"/>
-        <TreeView Margin="0,132,692,0" BorderBrush="White">
-            <TreeViewItem Header="Comptabilité" IsExpanded="True" FontWeight="Bold" FontSize="15">
-                <TreeViewItem Header="Validation des Frais" FontWeight="Normal" Background="Aquamarine" />
-                <TreeViewItem Header="Consulter les Frais" FontWeight="Normal" />
-            </TreeViewItem>
-        </TreeView>
         <Label Content="Hors Forfait : " HorizontalAlignment="Left" Height="30" Margin="211,221,0,0" VerticalAlignment="Top" Width="125" FontSize="15" FontWeight="Bold"/>
         <DataGrid Name="Forfait" IsReadOnly="True" AutoGenerateColumns="False" Margin="221,113,166,285" SelectionChanged="Forfait_SelectionChanged" >
             <DataGrid.Columns>
@@ -45,5 +39,7 @@
         <ComboBox x:Name="SelectSituationForfait" HorizontalAlignment="Left" Height="30" Margin="729,151,0,0" VerticalAlignment="Top" Width="127" Text="Selectionner Etat" IsEditable="True" IsReadOnly="True"></ComboBox>
         <ComboBox x:Name="SelectSituationHorsForfait" HorizontalAlignment="Left" Height="30" Margin="729,303,0,0" VerticalAlignment="Top" Width="127" Text="Selectionner Etat" IsEditable="True" IsReadOnly="True"/>
         <TextBox  HorizontalAlignment="Left" Height="29" Margin="349,46,0,0" Text="MM/YYYY" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="NbJustificatif_TextChanged"/>
+        <Button Content="LogOut" Height="42" VerticalAlignment="Top" Margin="0,408,687,0" Click="LogOut_Click"/>
+        <Button Content="Consulter Frais" Height="42" VerticalAlignment="Top" Margin="0,226,687,0" Click="ConsulterFrais_Click_1"/>
     </Grid>
 </Window>

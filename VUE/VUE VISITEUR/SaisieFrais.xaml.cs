@@ -40,5 +40,18 @@ namespace GSB___JLAME
             this.Hide();
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = new Mainwindow();
+            mainWindow.Show();
+            this.Hide();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            var consulterFraisVisiteur = new ConsulterFraisVisiteur();
+            consulterFraisVisiteur.Show();
+            this.Hide();
+        }
     }
 }

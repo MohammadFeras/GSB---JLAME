@@ -21,5 +21,19 @@ namespace GSB___JLAME
         {
             InitializeComponent();
         }
+
+        private void ValidFrais_Click_1(object sender, RoutedEventArgs e)
+        {
+            var saisieFrais = new SaisieFrais();
+            saisieFrais.Show();
+            this.Hide();
+        }
+
+        private void LogOut_Click(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = new Mainwindow();
+            mainWindow.Show();
+            this.Hide();
+        }
     }
 }

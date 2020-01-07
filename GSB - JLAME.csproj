@@ -17,7 +17,6 @@
   <ItemGroup>
     <None Remove="logo.jpg" />
     <None Remove="VUE\Fondpage1.png" />
-    <None Remove="VUE\logo.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,14 +25,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="VUE\logo.jpg" />
+    <Resource Include="VUE\photos\logo.jpg" />
   </ItemGroup>
 
   <ItemGroup>
-    <Page Update="VUE\LoginComptabilite.xaml">
+    <Page Update="VUE\VUE COMPTABLE\LoginComptabilite.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="VUE\ValiderFrais.xaml">
+    <Page Update="VUE\VUE COMPTABLE\ValiderFrais.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
