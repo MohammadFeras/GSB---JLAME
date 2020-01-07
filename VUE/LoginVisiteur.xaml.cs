@@ -34,10 +34,10 @@ namespace GSB___JLAME
         private void Button_Click_Connect(object sender, RoutedEventArgs e)
         {
             /**** LANCEMENT REQUETE AVEC TEST CONNEXION AVEC LOGIN ET MOT DE PASSE ****/
-            string text = DAOVisiteur.RequestLogin(login,passwordBoxVisiteur.Password.ToString()); //Requête Test Login    
+            string text = DAOVisiteur.LoginIn(login,passwordBoxVisiteur.Password.ToString()); //Requête Test Login    
             invalid.Content = text; // SI login et mdp bon alors le texte vaut " ";
 
-            if (text == " ")
+            if (text.Equals(""))
             {
                 var validFrais = new ValiderFrais();
                 validFrais.Show();

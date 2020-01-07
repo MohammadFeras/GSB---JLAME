@@ -33,11 +33,11 @@ namespace GSB___JLAME
         {
             
             /**** LANCEMENT REQUETE ****/
-            string text = DAOComptabilite.RequestLogin(login,passwordBoxComptabilite.Password.ToString()); //Requête Test Login    
+            string text = DAOComptabilite.LoginIn(login,passwordBoxComptabilite.Password.ToString()); //Requête Test Login    
             invalid.Content = text;
 
             /**** TEST CONNEXION AVEC LOGIN ET MOT DE PASSE ****/
-            if (text == " ")
+            if (text.Equals(""))
             {
                 var validFrais = new ValiderFrais();
                 validFrais.Show();
