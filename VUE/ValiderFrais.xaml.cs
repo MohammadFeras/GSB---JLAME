@@ -72,19 +72,17 @@ namespace GSB___JLAME
 
         }
 
-        
-
-        private void NbJustificatif_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
         private void Forfait_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
 
         private void HorsForfait_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void NbJustificatif_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }

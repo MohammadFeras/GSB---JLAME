@@ -11,7 +11,7 @@ namespace GSB___JLAME
         {
             string text = "";
             SqlCommand commandlogin = Connexion.GetInstance().CreateCommand();
-            commandlogin.CommandText = "SELECT login FROM Visiteur WHERE login ='" + comptable + "'";
+            commandlogin.CommandText = "SELECT login FROM Comptable WHERE login ='" + comptable + "'";
             SqlDataReader dataReaderLogin = commandlogin.ExecuteReader();
             // Lecture des résultats
             if (dataReaderLogin.Read())
@@ -19,7 +19,7 @@ namespace GSB___JLAME
                 dataReaderLogin.Close();
 
                 SqlCommand commandmdp = Connexion.GetInstance().CreateCommand();
-                commandmdp.CommandText = "SELECT mdp FROM Visiteur WHERE login ='" + comptable + "'";
+                commandmdp.CommandText = "SELECT mdp FROM Comptable WHERE login ='" + comptable + "'";
                 SqlDataReader dataReaderMdp = commandmdp.ExecuteReader();
                 if (dataReaderMdp.Read())
                 {                    
