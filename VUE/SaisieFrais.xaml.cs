@@ -11,7 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GSB___JLAME.VUE
+namespace GSB___JLAME
 {
     /// <summary>
     /// Logique d'interaction pour SaisieFrais.xaml

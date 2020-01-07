@@ -8,6 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\**" />
+    <EmbeddedResource Remove="Pages\**" />
+    <None Remove="Pages\**" />
+    <Page Remove="Pages\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="logo.jpg" />
     <None Remove="VUE\Fondpage1.png" />
     <None Remove="VUE\logo.jpg" />
@@ -29,10 +36,6 @@
     <Page Update="VUE\ValiderFrais.xaml">
       <SubType>Designer</SubType>
     </Page>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Pages\" />
   </ItemGroup>
 
 </Project>
