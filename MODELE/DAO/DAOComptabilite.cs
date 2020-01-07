@@ -7,43 +7,30 @@ namespace GSB___JLAME
 {
     class DAOComptabilite
     {
-        public static string RequestLogin(string comptable)
+        public static string RequestLogin(string comptable, string mdp)
         {
-            string text = " ";
-            SqlCommand command = Connexion.GetInstance().CreateCommand();
-            command.CommandText = "SELECT login FROM Visiteur WHERE login ='" + comptable + "'";
-
+            string text = "Login ou mot de passe invalide";
+            SqlCommand commandlogin = Connexion.GetInstance().CreateCommand();
+            commandlogin.CommandText = "SELECT login FROM Visiteur WHERE login ='" + comptable + "'";
+            SqlDataReader dataReaderLogin = commandlogin.ExecuteReader();
             // Lecture des résultats
-            SqlDataReader dataReader = command.ExecuteReader();
-            bool trouve = dataReader.Read();
-            if (dataReader.Read())
+            if (dataReaderLogin.Read())
             {
-                bool valid = RequestMDP(comptable);
-                if (valid)
-                {
-                    text = " ";
+                dataReaderLogin.Close();
+
+                SqlCommand commandmdp = Connexion.GetInstance().CreateCommand();
+                commandmdp.CommandText = "SELECT mdp FROM Visiteur WHERE login ='" + comptable + "'";
+                SqlDataReader dataReaderMdp = commandmdp.ExecuteReader();
+                if (dataReaderMdp.Read())
+                {                    
+                    if (String.Format("{0}", dataReaderMdp[0]).Trim().Equals(mdp))
+                    {
+                        text = " ";
+                    }                    
                 }
-            }
-            else
-            {
-                text = "Login ou mot de passe invalide";
-            }
-            dataReader.Close();
+                dataReaderMdp.Close();
+            }            
             return text;
-        }
-
-        public static bool RequestMDP(string comptable)
-        {
-            SqlCommand command = Connexion.GetInstance().CreateCommand();
-
-            string requete = "SELECT mdp FROM Visiteur WHERE login ='" + comptable + "'";
-            command.CommandText = requete;
-
-            // Lecture des résultats
-            SqlDataReader dataReader = command.ExecuteReader();
-            bool trouve = dataReader.Read();            
-            dataReader.Close();
-            return trouve;
         }
     }
 }

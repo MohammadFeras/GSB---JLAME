@@ -33,12 +33,10 @@ namespace GSB___JLAME
 
         private void Button_Click_Connect(object sender, RoutedEventArgs e)
         {
-            /**** LANCEMENT REQUETE ****/
-            /**** LANCEMENT REQUETE ****/
-            string text = DAOVisiteur.RequestLogin(login); //Requête Test Login    
-            invalid.Content = text;
+            /**** LANCEMENT REQUETE AVEC TEST CONNEXION AVEC LOGIN ET MOT DE PASSE ****/
+            string text = DAOVisiteur.RequestLogin(login,passwordBoxVisiteur.Password.ToString()); //Requête Test Login    
+            invalid.Content = text; // SI login et mdp bon alors le texte vaut " ";
 
-            /**** TEST CONNEXION AVEC LOGIN ET MOT DE PASSE ****/
             if (text == " ")
             {
                 var validFrais = new ValiderFrais();

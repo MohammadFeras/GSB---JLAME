@@ -7,37 +7,30 @@ namespace GSB___JLAME
 {
     class DAOVisiteur
     {
-        public static bool RequestLogin(string visiteur)
+        public static string RequestLogin(string visiteur, string mdp)
         {
-            SqlCommand command = Connexion.GetInstance().CreateCommand();
-            command.CommandText = "SELECT login FROM Visiteur WHERE login ='" + visiteur + "'";
-
+            string text = "Login ou mot de passe invalide";
+            SqlCommand commandlogin = Connexion.GetInstance().CreateCommand();
+            commandlogin.CommandText = "SELECT login FROM Visiteur WHERE login ='" + visiteur + "'";
+            SqlDataReader dataReaderLogin = commandlogin.ExecuteReader();
             // Lecture des résultats
-            SqlDataReader dataReader = command.ExecuteReader();
-            bool trouve = dataReader.Read();
-            dataReader.Close();
-            return trouve;
-        }
-
-
-        public static string RequestMDP(string visiteur)
-        {
-            SqlCommand command = Connexion.GetInstance().CreateCommand();
-
-            string requete = "SELECT mdp FROM Visiteur WHERE login ='" + visiteur + "'";
-            command.CommandText = requete;
-
-            // Lecture des résultats
-            SqlDataReader dataReader = command.ExecuteReader();
-            string mdp = " ";
-
-            if (dataReader.Read())
+            if (dataReaderLogin.Read())
             {
-                mdp = String.Format("{0}", dataReader[0]);
-                mdp = mdp.Trim();
+                dataReaderLogin.Close();
+
+                SqlCommand commandmdp = Connexion.GetInstance().CreateCommand();
+                commandmdp.CommandText = "SELECT mdp FROM Visiteur WHERE login ='" + visiteur + "'";
+                SqlDataReader dataReaderMdp = commandmdp.ExecuteReader();
+                if (dataReaderMdp.Read())
+                {
+                    if (String.Format("{0}", dataReaderMdp[0]).Trim().Equals(mdp))
+                    {
+                        text = " ";
+                    }
+                }
+                dataReaderMdp.Close();
             }
-            dataReader.Close();
-            return mdp;
+            return text;
         }
 
         public static List<string> RequestCompleteComboBoxLogin()
@@ -54,7 +47,6 @@ namespace GSB___JLAME
                 toReturn.Add(trim);
             }
             dataReader.Close();
-
             return toReturn;
         }
     }
