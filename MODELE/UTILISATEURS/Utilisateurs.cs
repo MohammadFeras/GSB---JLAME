@@ -8,6 +8,8 @@ namespace GSB___JLAME.MODELE.UTILISATEURS
     {
         protected string mdp;
         protected string login;
+        protected string mail;
+        protected string numeroTel;
 
         public string Login
         {
