@@ -7,9 +7,9 @@ namespace GSB___JLAME
 {
     class DAOVisiteur
     {
-        public static string RequestLogin(string visiteur, string mdp)
+        public static string LoginIn(string visiteur, string mdp)
         {
-            string text = "Login ou mot de passe invalide";
+            string text = "";
             SqlCommand commandlogin = Connexion.GetInstance().CreateCommand();
             commandlogin.CommandText = "SELECT login FROM Visiteur WHERE login ='" + visiteur + "'";
             SqlDataReader dataReaderLogin = commandlogin.ExecuteReader();
@@ -23,12 +23,16 @@ namespace GSB___JLAME
                 SqlDataReader dataReaderMdp = commandmdp.ExecuteReader();
                 if (dataReaderMdp.Read())
                 {
-                    if (String.Format("{0}", dataReaderMdp[0]).Trim().Equals(mdp))
+                    if (!String.Format("{0}", dataReaderMdp[0]).Trim().Equals(mdp))
                     {
-                        text = " ";
+                        text = "mot de passe invalide";
                     }
                 }
                 dataReaderMdp.Close();
+            }
+            else
+            {
+                text = "Login inconnu";
             }
             return text;
         }
