@@ -13,10 +13,10 @@ namespace GSB___JLAME.VUEMODELE
         {
             List<FicheFrais> fiches = new List<FicheFrais>();
 
-            fiches.Add(new FicheFrais(10, 10, 1, 42, "situation1"));
-            fiches.Add(new FicheFrais(10, 10, 1, 42, "situation2"));
-            fiches.Add(new FicheFrais(10, 10, 1, 42, "situation3"));
-            fiches.Add(new FicheFrais(10, 10, 1, 42, "situation4"));
+            fiches.Add(new FicheFrais(10, 10, 10, 10, "Situation1", "10/10", "bonjour", 10,"Situation1"));
+            fiches.Add(new FicheFrais(10, 10, 10, 10, "Situation2", "10/10", "bonjour", 10, "Situation2"));
+            fiches.Add(new FicheFrais(10, 10, 10, 10, "Situation3", "10/10", "bonjour", 10, "Situation3"));
+            fiches.Add(new FicheFrais(10, 10, 10, 10, "Situation4", "10/10", "bonjour", 10, "Situation4"));
 
             return fiches;
         }

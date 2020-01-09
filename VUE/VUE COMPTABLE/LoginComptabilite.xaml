@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GSB___JLAME"
         mc:Ignorable="d"
-        Title="LoginComptabilite" Height="501" Width="890" ResizeMode="NoResize" >
+        Title="LoginComptabilite" Height="520" Width="890" ResizeMode="NoResize" >
     <Grid Background="White" Height="501">
         <Image HorizontalAlignment="Left" Height="130" VerticalAlignment="Top" Width="198" Source="../photos/logo.jpg"/>
         <TextBox HorizontalAlignment="Left" Margin="486,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" BorderBrush="Black" Height="30" TextChanged="TextBox_TextChanged"/>
         <Label Content="Login : " HorizontalAlignment="Left" Margin="380,192,0,0" VerticalAlignment="Top" FontSize="30" RenderTransformOrigin="0.881,0.535"/>
         <Label Content="Mot De Passe  : " HorizontalAlignment="Left" Margin="264,285,0,0" VerticalAlignment="Top" FontSize="30"/>
         <PasswordBox Name="passwordBoxComptabilite" HorizontalAlignment="Left" Margin="486,295,0,0" VerticalAlignment="Top" Width="160" BorderBrush="Black" Height="30"/>
-        <Rectangle HorizontalAlignment="Left" Height="494" Margin="198,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="692" Fill="LightGreen" Panel.ZIndex="-1"/>
+        <Rectangle HorizontalAlignment="Left" Height="501" Margin="198,0,0,0" Stroke="Black" VerticalAlignment="Center" Width="692" Fill="LightGreen" Panel.ZIndex="-1"/>
         <Label Content="Appli Gestion Frais" HorizontalAlignment="Left" Margin="342,21,0,0" VerticalAlignment="Top" Height="85" Width="436" FontSize="50"/>
         <Label Content="Comptabilite" HorizontalAlignment="Left" Margin="440,79,0,0" VerticalAlignment="Top" Height="85" Width="240" FontSize="40"/>
         <Button Content="Connect" HorizontalAlignment="Left" Height="50" Margin="446,385,0,0" VerticalAlignment="Top" Width="201" Click="Button_Click_Connect" BorderBrush="Black" OpacityMask="Black" FontSize="25"/>

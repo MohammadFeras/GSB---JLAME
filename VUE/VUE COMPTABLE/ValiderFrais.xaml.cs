@@ -55,6 +55,7 @@ namespace GSB___JLAME
         {
             selectedName = SelectName.SelectedItem.ToString();
             Forfait.ItemsSource = FicheFraisVue.Complete();
+            horsForfait.ItemsSource = FicheFraisVue.Complete();
         }
 
         private void Effacer_Click(object sender, RoutedEventArgs e)

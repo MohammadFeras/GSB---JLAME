@@ -11,10 +11,7 @@
         <Image HorizontalAlignment="Left" Height="130" VerticalAlignment="Top" Width="198" Source="../photos/logo.jpg"/>
         <Rectangle HorizontalAlignment="Left" Height="514" Margin="203,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="687" Fill="#FF7AB6D8" Panel.ZIndex="-1"/>
         <Rectangle HorizontalAlignment="Left" Height="63" Margin="198,0,0,0"  VerticalAlignment="Top" Width="692" Fill="White" Panel.ZIndex="0" />
-        <TreeView Margin="0,132,689,0" BorderBrush="White">
-            <TreeViewItem Header="Visiteurs" IsExpanded="True" FontWeight="Bold" FontSize="15"/>
-
-        </TreeView>
+        <TreeView Margin="0,132,689,0" BorderBrush="White"/>
         <Button Content="LogOut" Height="42" VerticalAlignment="Top" Margin="0,408,687,0" Click="Button_Click"/>
         <Label Content="Saisie des frais" HorizontalAlignment="Left" Margin="216,6,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.47,0.783" FontSize="30"/>
         <Label Content="Mois :" HorizontalAlignment="Left" Margin="216,82,0,0" VerticalAlignment="Top"/>

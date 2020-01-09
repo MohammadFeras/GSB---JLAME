@@ -23,7 +23,7 @@ namespace GSB___JLAME
                 SqlDataReader dataReaderMdp = commandmdp.ExecuteReader();
                 if (dataReaderMdp.Read())
                 {                    
-                    if (!String.Format("{0}", dataReaderMdp[0]).Trim().Equals(mdp))                    
+                    if (!String.Format("{0}", dataReaderMdp[0]).Equals(mdp))                    
                     {
                         text = "Mot de passe invalide";
                     }
