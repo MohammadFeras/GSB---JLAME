@@ -16,7 +16,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using GSB___JLAME.VUEMODELE;
 using MySql.Data.MySqlClient;
 
 namespace GSB___JLAME
@@ -24,16 +23,15 @@ namespace GSB___JLAME
 
     public partial class ValiderFrais : Window
     {
-        private FicheFraisVueModele FicheFraisVue;
-        private string selectedName;
+        private FicheFraisVueModele FicheFraisVueModele;
 
         public ValiderFrais()
         {
             InitializeComponent();
             RemplirComboBoxName();
             RemplirComboBoxSituation();
-            FicheFraisVue = new FicheFraisVueModele();
-            this.DataContext = FicheFraisVue;
+            FicheFraisVueModele = new FicheFraisVueModele();
+            this.DataContext = FicheFraisVueModele;
         }
 
         public void RemplirComboBoxName()
@@ -53,9 +51,9 @@ namespace GSB___JLAME
 
         private void SelectName_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            selectedName = SelectName.SelectedItem.ToString();
-            Forfait.ItemsSource = FicheFraisVue.Complete();
-            horsForfait.ItemsSource = FicheFraisVue.Complete();
+            string selectedName = SelectName.SelectedItem.ToString();
+            Forfait.ItemsSource = FicheFraisVueModele.Complete(selectedName);
+            horsForfait.ItemsSource = FicheFraisVueModele.Complete(selectedName);
         }
 
         private void Effacer_Click(object sender, RoutedEventArgs e)

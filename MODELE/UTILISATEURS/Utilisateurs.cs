@@ -23,10 +23,10 @@ namespace GSB___JLAME.MODELE.UTILISATEURS
             set { mdp = value; }
         }
 
-        public Utilisateurs(string login)
+        public Utilisateurs(string login,string pwd)
         {
             this.login = login;
-            this.mdp = mdp;
+            this.mdp = pwd;
         }
     }
 }

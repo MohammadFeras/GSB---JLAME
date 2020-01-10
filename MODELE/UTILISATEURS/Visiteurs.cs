@@ -6,5 +6,6 @@ namespace GSB___JLAME.MODELE.UTILISATEURS
 {
     class Visiteurs
     {
+
     }
 }

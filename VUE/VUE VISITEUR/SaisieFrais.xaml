@@ -9,29 +9,28 @@
 
     <Grid Background="White">
         <Image HorizontalAlignment="Left" Height="130" VerticalAlignment="Top" Width="198" Source="../photos/logo.jpg"/>
-        <Rectangle HorizontalAlignment="Left" Height="514" Margin="203,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="687" Fill="#FF7AB6D8" Panel.ZIndex="-1"/>
+        <Rectangle HorizontalAlignment="Left" Height="514" Margin="220,11,0,0" Stroke="Black" VerticalAlignment="Top" Width="687" Fill="#FF7AB6D8" Panel.ZIndex="-1"/>
         <Rectangle HorizontalAlignment="Left" Height="63" Margin="198,0,0,0"  VerticalAlignment="Top" Width="692" Fill="White" Panel.ZIndex="0" />
-        <TreeView Margin="0,132,689,0" BorderBrush="White"/>
-        <Button Content="LogOut" Height="42" VerticalAlignment="Top" Margin="0,408,687,0" Click="Button_Click"/>
+        <Button Content="Se Déconnecter" Height="42" VerticalAlignment="Top" Margin="0,408,670,0" Click="Button_Click"/>
         <Label Content="Saisie des frais" HorizontalAlignment="Left" Margin="216,6,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.47,0.783" FontSize="30"/>
-        <Label Content="Mois :" HorizontalAlignment="Left" Margin="216,82,0,0" VerticalAlignment="Top"/>
+        <Label Content="Mois :" HorizontalAlignment="Left" Margin="242,92,0,0" VerticalAlignment="Top" Height="35" Width="56"/>
         <Label Content="Frais au forfait :" HorizontalAlignment="Left" Margin="216,114,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <Label Content="Repas midi :" HorizontalAlignment="Left" Margin="216,157,0,0" VerticalAlignment="Top"/>
-        <Label Content="Nuitées :" HorizontalAlignment="Left" Margin="216,175,0,0" VerticalAlignment="Top"/>
-        <Label Content="Etape :" HorizontalAlignment="Left" Margin="216,194,0,0" VerticalAlignment="Top"/>
-        <Label Content="Kms :" HorizontalAlignment="Left" Margin="216,214,0,0" VerticalAlignment="Top"/>
-        <Label Content="Hors forfait :" HorizontalAlignment="Left" Margin="216,240,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <DatePicker HorizontalAlignment="Left" Margin="216,279,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="378,279,0,0" Text="Libellé" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextAlignment="Center" TextChanged="TextBox_TextChanged"/>
-        <TextBox HorizontalAlignment="Left" Margin="516,279,0,0" Text="Montant" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Valider" HorizontalAlignment="Left" Margin="498,398,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="650,280,0,0" VerticalAlignment="Top" Width="20"/>
-        <Button Content="Supprimer" HorizontalAlignment="Left" Margin="394,398,0,0" VerticalAlignment="Top" Width="100"/>
-        <TextBox HorizontalAlignment="Left" Margin="300,164,0,0" Text="Nb Repas" TextWrapping="Wrap" VerticalAlignment="Top" Width="72" Height="15" FontSize="8" TextAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Margin="300,182,0,0" Text="Nb Nuitées" TextWrapping="Wrap" VerticalAlignment="Top" Width="72" Height="15" FontSize="8" TextAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Margin="300,201,0,0" Text="Nb Etapes" TextWrapping="Wrap" VerticalAlignment="Top" Width="72" Height="15" FontSize="8" TextAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Margin="300,221,0,0" Text="Nb Kms" TextWrapping="Wrap" VerticalAlignment="Top" Width="72" Height="15" FontSize="8" TextAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Margin="300,89,0,0" Text="MM/YYYY" TextWrapping="Wrap" VerticalAlignment="Top" Width="72" Height="15" FontSize="8" TextAlignment="Center"/>
-        <Button Content="Consulter Frais" Height="42" VerticalAlignment="Top" Margin="0,226,687,0" Click="Button_Click_1"/>
+        <Label Content="Repas midi :" HorizontalAlignment="Left" Margin="233,168,0,0" VerticalAlignment="Top" Height="37" Width="105"/>
+        <Label Content="Nuitées :" HorizontalAlignment="Left" Margin="233,194,0,0" VerticalAlignment="Top" Height="37" Width="80"/>
+        <Label Content="Etape :" HorizontalAlignment="Left" Margin="233,221,0,0" VerticalAlignment="Top" Height="37" Width="65"/>
+        <Label Content="Kms :" HorizontalAlignment="Left" Margin="233,249,0,0" VerticalAlignment="Top" Height="37" Width="54"/>
+        <Label Content="Hors forfait :" HorizontalAlignment="Left" Margin="216,281,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <DatePicker HorizontalAlignment="Left" Margin="290,317,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="452,317,0,0" Text="Libellé" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextAlignment="Center" TextChanged="TextBox_TextChanged"/>
+        <TextBox HorizontalAlignment="Left" Margin="590,317,0,0" Text="Montant" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Valider" HorizontalAlignment="Left" Margin="544,429,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button Content="+" HorizontalAlignment="Left" Margin="724,318,0,0" VerticalAlignment="Top" Width="20"/>
+        <Button Content="Supprimer" HorizontalAlignment="Left" Margin="440,429,0,0" VerticalAlignment="Top" Width="100"/>
+        <TextBox HorizontalAlignment="Left" Margin="352,178,0,0" Text="Nb Repas" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" Height="21" FontSize="8" TextAlignment="Center"/>
+        <TextBox HorizontalAlignment="Left" Margin="352,204,0,0" Text="Nb Nuitées" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" Height="21" FontSize="8" TextAlignment="Center"/>
+        <TextBox HorizontalAlignment="Left" Margin="352,231,0,0" Text="Nb Etapes" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" Height="21" FontSize="8" TextAlignment="Center"/>
+        <TextBox HorizontalAlignment="Left" Margin="352,259,0,0" Text="Nb Kms" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" Height="21" FontSize="8" TextAlignment="Center"/>
+        <TextBox HorizontalAlignment="Left" Margin="356,102,0,0" Text="MM/YYYY" TextWrapping="Wrap" VerticalAlignment="Top" Width="97" Height="20" FontSize="8" TextAlignment="Center"/>
+        <Button Content="Consulter Frais" Height="42" VerticalAlignment="Top" Margin="0,127,670,0" Click="Button_Click_1"/>
     </Grid>
 </Window>

@@ -13,7 +13,7 @@
         <Label Content="Mot De Passe  : " HorizontalAlignment="Left" Margin="265,285,0,0" VerticalAlignment="Top" FontSize="30"/>
         <PasswordBox Name="passwordBoxVisiteur" HorizontalAlignment="Left" Margin="487,295,0,0" VerticalAlignment="Top" Width="160" BorderBrush="Black" Height="30"/>
         <Rectangle HorizontalAlignment="Left" Height="504" Margin="203,0,0,0" Stroke="Black" VerticalAlignment="Center" Width="687" Fill="#FF7AB6D8" Panel.ZIndex="-1"/>
-        <Button Content="Connect" HorizontalAlignment="Left" Height="50" Margin="446,385,0,0" VerticalAlignment="Top" Width="201" Click="Button_Click_Connect" BorderBrush="Black" OpacityMask="Black" FontSize="25"/>
+        <Button Content="Se Connecter" HorizontalAlignment="Left" Height="50" Margin="446,385,0,0" VerticalAlignment="Top" Width="201" Click="Button_Click_Connect" BorderBrush="Black" OpacityMask="Black" FontSize="25"/>
         <Label x:Name="invalid" Foreground="Red" Content="" HorizontalAlignment="Left" Margin="434,360,0,0" VerticalAlignment="Top" Height="35" Width="230" Background="{x:Null}" BorderBrush="#FFFF0303" FontSize="15"/>
         <Button Content="Page d'accueil" HorizontalAlignment="Left" Height="50" Margin="0,177,0,0" VerticalAlignment="Top" Width="203" Click="Button_Click_Accueil" BorderBrush="Black" OpacityMask="Black" FontSize="22"/>
         <Button Content="Page Comptabilité" HorizontalAlignment="Left" Height="50" Margin="0,310,0,0" VerticalAlignment="Top" Width="203" Click="Button_Click_Comptabilite" BorderBrush="Black" OpacityMask="Black" FontSize="22"/>

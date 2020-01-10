@@ -39,7 +39,7 @@ namespace GSB___JLAME
 
         public static List<string> AllSituation()
         {
-            List<string> situation = new List<string>(4);
+            List<string> situation = new List<string>();
             SqlCommand commandSituation = Connexion.GetInstance().CreateCommand();
             commandSituation.CommandText = "SELECT libelle FROM Etat";
             SqlDataReader dataReaderSituation = commandSituation.ExecuteReader();

@@ -21,18 +21,21 @@ namespace GSB___JLAME.MODELE
         public string DateOperation { get; set; }
 
 
-        public FicheFrais(int rep, int nuit, int eta, int km, string situaF, string dat, string libe, int mont,string situaHF)
+        public FicheFrais(int rep, int nuit, int eta, int km, string situaF, string dat, string libe, int mont, string situaHF, string dateOpe)
         {
+            /**** FORFAIT ****/
             this.Repas = rep;
             this.Nuitee = nuit;
             this.Etape = eta;
             this.Km = km;
             this.SituationF = situaF;
+
+            /**** HORS FORFAIT ****/
             this.Date = dat;
             this.Libelle = libe;
             this.Montant = mont;
             this.SituationHF = situaHF;
-            //this.DateOperation = dateOpe;
+            this.DateOperation = dateOpe;
         }
         
     }

@@ -15,7 +15,7 @@
         <Rectangle HorizontalAlignment="Left" Height="501" Margin="198,0,0,0" Stroke="Black" VerticalAlignment="Center" Width="692" Fill="LightGreen" Panel.ZIndex="-1"/>
         <Label Content="Appli Gestion Frais" HorizontalAlignment="Left" Margin="342,21,0,0" VerticalAlignment="Top" Height="85" Width="436" FontSize="50"/>
         <Label Content="Comptabilite" HorizontalAlignment="Left" Margin="440,79,0,0" VerticalAlignment="Top" Height="85" Width="240" FontSize="40"/>
-        <Button Content="Connect" HorizontalAlignment="Left" Height="50" Margin="446,385,0,0" VerticalAlignment="Top" Width="201" Click="Button_Click_Connect" BorderBrush="Black" OpacityMask="Black" FontSize="25"/>
+        <Button Content="Se Connecter" HorizontalAlignment="Left" Height="50" Margin="446,385,0,0" VerticalAlignment="Top" Width="201" Click="Button_Click_Connect" BorderBrush="Black" OpacityMask="Black" FontSize="25"/>
         <Button Content="Page d'accueil" HorizontalAlignment="Left" Height="50" Margin="0,177,0,0" VerticalAlignment="Top" Width="198" Click="Button_Click_Accueil" BorderBrush="Black" OpacityMask="Black" FontSize="22"/>
         <Button Content="Page Visiteur" HorizontalAlignment="Left" Height="50" Margin="0,310,0,0" VerticalAlignment="Top" Width="198" Click="Button_Click_Visiteur" BorderBrush="Black" OpacityMask="Black" FontSize="22"/>
         <Label x:Name="invalid" Foreground="Red" Content="" HorizontalAlignment="Left" Margin="434,360,0,0" VerticalAlignment="Top" Height="35" Width="230" Background="{x:Null}" BorderBrush="#FFFF0303" FontSize="15"/>
