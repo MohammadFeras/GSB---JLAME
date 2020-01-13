@@ -8,7 +8,7 @@
         Title="ConsulterFraisVisiteur" Height="520" Width="890" ResizeMode="NoResize" >
     <Grid>
         <Image HorizontalAlignment="Left" Height="130" VerticalAlignment="Top" Width="198" Source="../photos/logo.jpg"/>
-        <Rectangle HorizontalAlignment="Left" Height="494" Margin="198,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="692" Fill="#FF7AB6D8" Panel.ZIndex="-1" RenderTransformOrigin="0.5,0.5">
+        <Rectangle HorizontalAlignment="Left" Height="448" Margin="198,60,0,0" Stroke="Black" VerticalAlignment="Top" Width="692" Fill="#FF7AB6D8" Panel.ZIndex="-1" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -20,9 +20,8 @@
         </Rectangle>
         <Label Content="Période" HorizontalAlignment="Left" Margin="222,10,0,0" VerticalAlignment="Top" Height="45" Width="203" FontSize="25"/>
         <Label Content="Mois/Année:" HorizontalAlignment="Left" Margin="222,60,0,0" VerticalAlignment="Top" Height="34" Width="102" FontSize="15"/>
-        <TextBox HorizontalAlignment="Left" Margin="383,66,0,0" Text="MM/YYYY" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="Frais au forfait" HorizontalAlignment="Left" Margin="222,106,0,0" VerticalAlignment="Top" Width="117" FontSize="15"/>
-        <DataGrid Name="FraisAuForfait" AutoGenerateColumns="False"  Margin="222,145,10,271">
+        <DataGrid Name="FraisAuForfait" CanUserReorderColumns="False" CanUserResizeColumns="False" AutoGenerateColumns="False"  Margin="222,145,10,271">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Repas midi"/>
                 <DataGridTextColumn Header="Nuitée"/>
@@ -50,7 +49,7 @@
             </DataGrid.RowDetailsTemplate>
         </DataGrid>
         <Label Content="Hors forfait" HorizontalAlignment="Left" Margin="222,247,0,0" VerticalAlignment="Top" Width="117" FontSize="15"/>
-        <DataGrid Name="HorsForfait" AutoGenerateColumns="False"  Margin="222,282,10,117">
+        <DataGrid Name="HorsForfait" CanUserReorderColumns="False" CanUserResizeColumns="False" AutoGenerateColumns="False"  Margin="222,282,10,117">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Date"/>
                 <DataGridTextColumn Header="Libellé"/>
@@ -66,8 +65,9 @@
         </DataGrid>
         <Label Content="Nb Justificatifs" HorizontalAlignment="Left" Margin="222,394,0,0" VerticalAlignment="Top" Width="117" FontSize="15"/>
         <TextBox HorizontalAlignment="Left" Margin="383,402,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="60"/>
-        <Button Content="LogOut" Height="42" VerticalAlignment="Top" Margin="0,345,692,0" Click="LogOut_Click"/>
-        <Button Content="Saisie Frais" Height="42" VerticalAlignment="Top" Margin="0,163,692,0" Click="ValidFrais_Click_1"/>
+        <Button Content="Se Déconnecter" Height="42" VerticalAlignment="Top" Margin="0,345,692,0" Click="LogOut_Click"/>
+        <Button Content="Saisie Frais" Height="42" VerticalAlignment="Top" Margin="0,127,692,0" Click="ValidFrais_Click_1"/>
+        <DatePicker  x:Name="DatePicker1" SelectedDateFormat="Short" HorizontalAlignment="Left" Margin="329,65,0,0" VerticalAlignment="Top" SelectedDateChanged ="SelectDate_SelectionChanged"/>
 
 
     </Grid>

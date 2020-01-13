@@ -21,9 +21,8 @@ namespace GSB___JLAME
                 string connetionString = "Data Source=" + nomServeur + ";Initial Catalog=" + nomBD + "; Integrated Security=true";//Paramètre de connection à la BD
                 LaConnexion = new SqlConnection(connetionString);
                 try
-                {
-                    // Connexion à la base de données
-                    LaConnexion.Open();
+                {                    
+                    LaConnexion.Open();// Connexion à la base de données
                     Console.WriteLine("connecté");
                 }
                 catch (Exception ex)

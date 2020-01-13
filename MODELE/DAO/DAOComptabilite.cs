@@ -7,6 +7,7 @@ namespace GSB___JLAME
 {
     class DAOComptabilite
     {
+        /**** Login ****/
         public static string LoginIn(string comptable, string mdp)
         {
             string text = "";
@@ -17,13 +18,12 @@ namespace GSB___JLAME
             if (dataReaderLogin.Read())
             {
                 dataReaderLogin.Close();
-
                 SqlCommand commandmdp = Connexion.GetInstance().CreateCommand();
                 commandmdp.CommandText = "SELECT mdp FROM Comptable WHERE login ='" + comptable + "'";
                 SqlDataReader dataReaderMdp = commandmdp.ExecuteReader();
                 if (dataReaderMdp.Read())
                 {                    
-                    if (!String.Format("{0}", dataReaderMdp[0]).Trim().Equals(mdp))                    
+                    if (!String.Format("{0}", dataReaderMdp[0]).Equals(mdp))                    
                     {
                         text = "Mot de passe invalide";
                     }
@@ -37,9 +37,10 @@ namespace GSB___JLAME
             return text;
         }
 
+        /**** Requête Completer Combobox Situations ****/
         public static List<string> AllSituation()
         {
-            List<string> situation = new List<string>(4);
+            List<string> situation = new List<string>();
             SqlCommand commandSituation = Connexion.GetInstance().CreateCommand();
             commandSituation.CommandText = "SELECT libelle FROM Etat";
             SqlDataReader dataReaderSituation = commandSituation.ExecuteReader();
@@ -49,6 +50,23 @@ namespace GSB___JLAME
                 situation.Add(String.Format("{0}", dataReaderSituation[0]));
             }
              return situation;
+        }
+
+        /**** Requête Completer Combobox Prenoms ****/
+        public static List<string> RequestCompleteComboBoxPrenoms()
+        {
+            List<string> toReturn = new List<string>();
+            SqlCommand command = Connexion.GetInstance().CreateCommand();
+            command.CommandText = "SELECT prenom FROM Visiteur";
+
+            // Lecture des résultats
+            SqlDataReader dataReader = command.ExecuteReader();
+            while (dataReader.Read())
+            {
+                toReturn.Add(dataReader[0].ToString());
+            }
+            dataReader.Close();
+            return toReturn;
         }
     }
 }
