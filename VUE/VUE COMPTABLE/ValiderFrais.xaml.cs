@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Security;
 using System.Text;
@@ -24,27 +25,34 @@ namespace GSB___JLAME
     public partial class ValiderFrais : Window
     {
         private FicheFraisVueModele FicheFraisVueModele;
+        
 
         public ValiderFrais()
         {
             InitializeComponent();
+
             RemplirComboBoxName();
             RemplirComboBoxSituation();
+
+            /**** Liaison avec la Vue Modèle ****/
             FicheFraisVueModele = new FicheFraisVueModele();
             this.DataContext = FicheFraisVueModele;
+
+            DatePicker1.DisplayDateStart = DateTime.Today.AddYears(-1); // Bloquer la sélection 1 an avant           
+            DatePicker1.SelectedDate = DateTime.Today; //Affecter la date d'aujourd'hui en texte par défault dans le datePicker
         }
 
         public void RemplirComboBoxName()
         {
             //**** REMPLIR COMBOBOX NAME ****//
-            List<string> item = DAOVisiteur.RequestCompleteComboBoxLogin();
+            List<string> item = DAOComptabilite.RequestCompleteComboBoxPrenoms(); //REQUETE POUR COMPLETER COMBOBOX PRENOMS
             SelectName.ItemsSource = item;
         }
 
         public void RemplirComboBoxSituation()
         {
             //**** REMPLIR COMBOBOX Situation ****//
-            List<string> item = DAOComptabilite.AllSituation();
+            List<string> item = DAOComptabilite.AllSituation(); //REQUETE POUR COMPLETER COMBOBOX SITUATIONS
             SelectSituationForfait.ItemsSource = item;
             SelectSituationHorsForfait.ItemsSource = item;
         }
@@ -54,6 +62,18 @@ namespace GSB___JLAME
             string selectedName = SelectName.SelectedItem.ToString();
             Forfait.ItemsSource = FicheFraisVueModele.Complete(selectedName);
             horsForfait.ItemsSource = FicheFraisVueModele.Complete(selectedName);
+        }
+
+        private void SelectDate_SelectionChanged(object sender,SelectionChangedEventArgs e)
+        {
+            DateTime date = DateTime.ParseExact(DatePicker1.SelectedDate.ToString(), "dd/MM/yyyy hh:mm:ss", CultureInfo.InvariantCulture);
+            string dateStr = date.ToString("y", CultureInfo.CreateSpecificCulture("fr-FR")); // PASSAGE AU FORMAT MOIS/ANNEE  
+
+            if(DatePicker1.SelectedDate.ToString() != DateTime.Today.ToString()) // POUR LES TESTS
+            {
+                MessageBox.Show(dateStr);
+            }
+            
         }
 
         private void Effacer_Click(object sender, RoutedEventArgs e)
@@ -97,5 +117,6 @@ namespace GSB___JLAME
         {
 
         }
+
     }
 }

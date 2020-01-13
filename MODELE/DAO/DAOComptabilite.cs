@@ -50,5 +50,21 @@ namespace GSB___JLAME
             }
              return situation;
         }
+
+        public static List<string> RequestCompleteComboBoxPrenoms()
+        {
+            List<string> toReturn = new List<string>();
+            SqlCommand command = Connexion.GetInstance().CreateCommand();
+            command.CommandText = "SELECT prenom FROM Visiteur";
+
+            // Lecture des résultats
+            SqlDataReader dataReader = command.ExecuteReader();
+            while (dataReader.Read())
+            {
+                toReturn.Add(dataReader[0].ToString());
+            }
+            dataReader.Close();
+            return toReturn;
+        }
     }
 }
