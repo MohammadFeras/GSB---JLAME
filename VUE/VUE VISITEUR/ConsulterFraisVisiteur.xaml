@@ -23,7 +23,7 @@
         <Label Content="Frais au forfait" HorizontalAlignment="Left" Margin="222,106,0,0" VerticalAlignment="Top" Width="117" FontSize="15"/>
         <DataGrid Name="FraisAuForfait" CanUserReorderColumns="False" CanUserResizeColumns="False" AutoGenerateColumns="False"  Margin="222,145,10,271">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Repas midi"/>
+                <DataGridTextColumn Header="Repas Resto"/>
                 <DataGridTextColumn Header="Nuitée"/>
                 <DataGridTextColumn Header="Etape"/>
                 <DataGridTextColumn Header="Km"/>

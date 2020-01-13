@@ -20,7 +20,7 @@
         <Label Content="Hors Forfait : " HorizontalAlignment="Left" Height="30" Margin="211,191,0,0" VerticalAlignment="Top" Width="125" FontSize="15" FontWeight="Bold"/>
         <DataGrid Name="Forfait" CanUserReorderColumns="False" CanUserResizeColumns="False" IsReadOnly="True" AutoGenerateColumns="False" Margin="211,79,141,333" SelectionChanged="Forfait_SelectionChanged" >
             <DataGrid.Columns>
-                <DataGridTextColumn Width="80" Header="Repas Midi" Binding="{Binding Repas}"/>
+                <DataGridTextColumn Width="80" Header="Repas Resto" Binding="{Binding Repas}"/>
                 <DataGridTextColumn Width="80" Header="Nuitée" Binding="{Binding Nuitee}"/>
                 <DataGridTextColumn Width="80" Header="Etape" Binding="{Binding Etape}"/>
                 <DataGridTextColumn Width="80" Header="Km" Binding="{Binding Km}"/>
