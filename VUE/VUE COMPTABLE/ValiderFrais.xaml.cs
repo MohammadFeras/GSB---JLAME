@@ -25,7 +25,7 @@ namespace GSB___JLAME
     public partial class ValiderFrais : Window
     {
         private FicheFraisVueModele FicheFraisVueModele;
-        string dateStr;
+        
 
         public ValiderFrais()
         {
@@ -41,6 +41,7 @@ namespace GSB___JLAME
             DatePicker1.DisplayDateStart = DateTime.Today.AddYears(-1); // Permet d'éviter de rentrer une date qui dépasse les 1 an avant la date d'aujourd'hui
             DatePicker1.DisplayDateEnd = DateTime.Today; // Permet d'éviter de rentrer une date après la date d'aujourd'hui
             DatePicker1.SelectedDate = DateTime.Today; //Affecter la date d'aujourd'hui en texte par défault dans le datePicker
+            MessageBox.Show(DateTime.Today.ToString());
         }
 
         public void RemplirComboBoxName()
@@ -68,7 +69,7 @@ namespace GSB___JLAME
         private void SelectDate_SelectionChanged(object sender,SelectionChangedEventArgs e)
         {
             DateTime date = DateTime.ParseExact(DatePicker1.SelectedDate.ToString(), "dd/MM/yyyy hh:mm:ss", CultureInfo.InvariantCulture);
-            dateStr = date.ToString("y", CultureInfo.CreateSpecificCulture("fr-FR")); // PASSAGE AU FORMAT MOIS/ANNEE                        
+            string dateStr = date.ToString("y", CultureInfo.CreateSpecificCulture("fr-FR")); // PASSAGE AU FORMAT MOIS/ANNEE                        
         }
 
         private void Effacer_Click(object sender, RoutedEventArgs e)
