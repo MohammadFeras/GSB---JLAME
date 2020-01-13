@@ -68,7 +68,8 @@ namespace GSB___JLAME
         private void SelectDate_SelectionChanged(object sender,SelectionChangedEventArgs e)
         {
             DateTime date = DateTime.ParseExact(DatePicker1.SelectedDate.ToString(), "dd/MM/yyyy hh:mm:ss", CultureInfo.InvariantCulture);
-            dateStr = date.ToString("y", CultureInfo.CreateSpecificCulture("fr-FR")); // PASSAGE AU FORMAT MOIS/ANNEE                        
+            dateStr = date.ToString("y", CultureInfo.CreateSpecificCulture("fr-FR")); // PASSAGE AU FORMAT MOIS/ANNEE  
+            MessageBox.Show(date.ToString());
         }
 
         private void Effacer_Click(object sender, RoutedEventArgs e)
