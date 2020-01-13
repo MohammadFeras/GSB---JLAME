@@ -7,6 +7,7 @@ namespace GSB___JLAME
 {
     class DAOComptabilite
     {
+        /**** Login ****/
         public static string LoginIn(string comptable, string mdp)
         {
             string text = "";
@@ -17,7 +18,6 @@ namespace GSB___JLAME
             if (dataReaderLogin.Read())
             {
                 dataReaderLogin.Close();
-
                 SqlCommand commandmdp = Connexion.GetInstance().CreateCommand();
                 commandmdp.CommandText = "SELECT mdp FROM Comptable WHERE login ='" + comptable + "'";
                 SqlDataReader dataReaderMdp = commandmdp.ExecuteReader();
@@ -37,6 +37,7 @@ namespace GSB___JLAME
             return text;
         }
 
+        /**** Requête Completer Combobox Situations ****/
         public static List<string> AllSituation()
         {
             List<string> situation = new List<string>();
@@ -51,6 +52,7 @@ namespace GSB___JLAME
              return situation;
         }
 
+        /**** Requête Completer Combobox Prenoms ****/
         public static List<string> RequestCompleteComboBoxPrenoms()
         {
             List<string> toReturn = new List<string>();

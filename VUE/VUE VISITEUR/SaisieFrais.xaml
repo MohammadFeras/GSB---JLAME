@@ -30,7 +30,7 @@
         <TextBox HorizontalAlignment="Left" Margin="352,204,0,0" Text="Nb Nuitées" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" Height="21" FontSize="8" TextAlignment="Center"/>
         <TextBox HorizontalAlignment="Left" Margin="352,231,0,0" Text="Nb Etapes" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" Height="21" FontSize="8" TextAlignment="Center"/>
         <TextBox HorizontalAlignment="Left" Margin="352,259,0,0" Text="Nb Kms" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" Height="21" FontSize="8" TextAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Margin="356,102,0,0" Text="MM/YYYY" TextWrapping="Wrap" VerticalAlignment="Top" Width="97" Height="20" FontSize="8" TextAlignment="Center"/>
         <Button Content="Consulter Frais" Height="42" VerticalAlignment="Top" Margin="0,127,670,0" Click="Button_Click_1"/>
+        <DatePicker  x:Name="DatePicker1" SelectedDateFormat="Short" HorizontalAlignment="Left" Margin="290,92,0,0" VerticalAlignment="Top" SelectedDateChanged ="SelectDate_SelectionChanged" RenderTransformOrigin="0.386,0.594"/>
     </Grid>
 </Window>

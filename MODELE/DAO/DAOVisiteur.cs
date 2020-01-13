@@ -7,6 +7,7 @@ namespace GSB___JLAME
 {
     class DAOVisiteur
     {
+        /**** Login ****/
         public static string LoginIn(string visiteur, string mdp)
         {
             string text = "";
@@ -17,7 +18,6 @@ namespace GSB___JLAME
             if (dataReaderLogin.Read())
             {
                 dataReaderLogin.Close();
-
                 SqlCommand commandmdp = Connexion.GetInstance().CreateCommand();
                 commandmdp.CommandText = "SELECT mdp FROM Visiteur WHERE login ='" + visiteur + "'";
                 SqlDataReader dataReaderMdp = commandmdp.ExecuteReader();
