@@ -13,11 +13,17 @@ using System.Windows.Shapes;
 
 namespace GSB___JLAME
 {
-    public partial class ConsulterFraisVisiteur : Window
+    public partial class ConsulterFraisComptable : Window
     {
-        public ConsulterFraisVisiteur()
+        private FicheFraisVueModele FicheFraisVueModele;
+
+        public ConsulterFraisComptable()
         {
             InitializeComponent();
+
+            /**** Liaison avec la Vue Modèle ****/
+            FicheFraisVueModele = new FicheFraisVueModele();
+            this.DataContext = FicheFraisVueModele;
 
             DatePicker1.DisplayDateStart = DateTime.Today.AddYears(-1); // Permet d'éviter de rentrer une date qui dépasse les 1 an avant la date d'aujourd'hui
             DatePicker1.DisplayDateEnd = DateTime.Today; // Permet d'éviter de rentrer une date après la date d'aujourd'hui
@@ -43,6 +49,13 @@ namespace GSB___JLAME
             DateTime date = DateTime.ParseExact(DatePicker1.SelectedDate.ToString(), "dd/MM/yyyy hh:mm:ss", CultureInfo.InvariantCulture);
             string dateStr = date.ToString("y", CultureInfo.CreateSpecificCulture("fr-FR")); // PASSAGE AU FORMAT MOIS/ANNEE
             MessageBox.Show(dateStr);
+        }
+
+        private void SelectName_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string selectedName = SelectName.SelectedItem.ToString();
+            DataGridForfait.ItemsSource = FicheFraisVueModele.Complete(selectedName);
+            DataGridhorsForfait.ItemsSource = FicheFraisVueModele.Complete(selectedName);
         }
 
     }

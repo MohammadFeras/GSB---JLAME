@@ -16,7 +16,6 @@ namespace GSB___JLAME
 {
     public partial class SaisieFrais : Window
     {
-        string dateStr;
 
         public SaisieFrais()
         {
@@ -62,8 +61,9 @@ namespace GSB___JLAME
 
         private void SelectDate_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            DateTime date = DateTime.ParseExact(DatePicker1.SelectedDate.ToString(), "dd/MM/yyyy hh:mm:ss", CultureInfo.InvariantCulture); //Convertir un string sous forme d'un DateTime
-            dateStr = date.ToString("y", CultureInfo.CreateSpecificCulture("fr-FR")); // PASSAGE AU FORMAT MOIS/ANNEE                        
+            DateTime date = DateTime.ParseExact(DatePicker1.SelectedDate.ToString(), "dd/MM/yyyy hh:mm:ss", CultureInfo.InvariantCulture);
+            string dateStr = date.ToString("y", CultureInfo.CreateSpecificCulture("fr-FR")); // PASSAGE AU FORMAT MOIS/ANNEE
+            MessageBox.Show(dateStr);
         }
 
     }

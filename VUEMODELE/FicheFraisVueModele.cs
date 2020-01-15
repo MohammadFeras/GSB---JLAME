@@ -17,21 +17,6 @@ namespace GSB___JLAME
 
             return fiches;
         }
-                              
-        public void AddToBD(int rep, int nuit, int eta, int km, string situaF, string dat, string libe, int mont, string situaHF, string dateOpe)
-        {
-            FicheFrais fiche = new FicheFrais(rep, nuit, eta, km, situaF, dat, libe, mont, situaHF, dateOpe);
-            bool exist = true;
-            if (exist)
-            {
-                // TO DO (MODIFIER DANS LA BD)
-            }
-            else
-            {
-                // TO DO (AJOUTER A LA BD)
-            }
-        }
 
-      
     }
 }

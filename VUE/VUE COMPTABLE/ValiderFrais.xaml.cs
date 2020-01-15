@@ -25,12 +25,13 @@ namespace GSB___JLAME
     public partial class ValiderFrais : Window
     {
         private FicheFraisVueModele FicheFraisVueModele;
-        
+
 
         public ValiderFrais()
         {
             InitializeComponent();
 
+            /**** REQUETES LANCEES LORS DE L'INITIALISATION DE LA VUE ****/
             RemplirComboBoxName();
             RemplirComboBoxSituation();
 
@@ -38,22 +39,22 @@ namespace GSB___JLAME
             FicheFraisVueModele = new FicheFraisVueModele();
             this.DataContext = FicheFraisVueModele;
 
-            DatePicker1.DisplayDateStart = DateTime.Today.AddYears(-1); // Permet d'éviter de rentrer une date qui dépasse les 1 an avant la date d'aujourd'hui
-            DatePicker1.DisplayDateEnd = DateTime.Today; // Permet d'éviter de rentrer une date après la date d'aujourd'hui
-            DatePicker1.SelectedDate = DateTime.Today; //Affecter la date d'aujourd'hui en texte par défault dans le datePicker
-            MessageBox.Show(DateTime.Today.ToString());
+            /**** CONFIGURATION DU DATEPICKER ****/
+            SelectDate.DisplayDateStart = DateTime.Today.AddYears(-1); // Permet d'éviter de rentrer une date qui dépasse les 1 an avant la date d'aujourd'hui
+            SelectDate.DisplayDateEnd = DateTime.Today; // Permet d'éviter de rentrer une date après la date d'aujourd'hui
+            SelectDate.SelectedDate = DateTime.Today; //Affecter la date d'aujourd'hui en texte par défault dans le datePicker
         }
 
+        //**** REMPLIR COMBOBOX NAME ****//
         public void RemplirComboBoxName()
-        {
-            //**** REMPLIR COMBOBOX NAME ****//
+        {            
             List<string> item = DAOComptabilite.RequestCompleteComboBoxPrenoms(); //REQUETE POUR COMPLETER COMBOBOX PRENOMS
             SelectName.ItemsSource = item;
         }
 
+        //**** REMPLIR COMBOBOX Situation ****//
         public void RemplirComboBoxSituation()
-        {
-            //**** REMPLIR COMBOBOX Situation ****//
+        {            
             List<string> item = DAOComptabilite.AllSituation(); //REQUETE POUR COMPLETER COMBOBOX SITUATIONS
             SelectSituationForfait.ItemsSource = item;
             SelectSituationHorsForfait.ItemsSource = item;
@@ -62,15 +63,31 @@ namespace GSB___JLAME
         private void SelectName_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string selectedName = SelectName.SelectedItem.ToString();
-            Forfait.ItemsSource = FicheFraisVueModele.Complete(selectedName);
-            horsForfait.ItemsSource = FicheFraisVueModele.Complete(selectedName);
+            DataGridForfait.ItemsSource = FicheFraisVueModele.Complete(selectedName);
+            DataGridhorsForfait.ItemsSource = FicheFraisVueModele.Complete(selectedName);
         }
 
-        private void SelectDate_SelectionChanged(object sender,SelectionChangedEventArgs e)
+        private void SelectDate_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            DateTime date = DateTime.ParseExact(DatePicker1.SelectedDate.ToString(), "dd/MM/yyyy hh:mm:ss", CultureInfo.InvariantCulture);
-            string dateStr = date.ToString("y", CultureInfo.CreateSpecificCulture("fr-FR")); // PASSAGE AU FORMAT MOIS/ANNEE  
-            MessageBox.Show(date.ToString());
+            DateTime date = DateTime.ParseExact(SelectDate.SelectedDate.ToString(), "dd/MM/yyyy hh:mm:ss", CultureInfo.InvariantCulture);
+            string dateStr = date.ToString("y", CultureInfo.CreateSpecificCulture("fr-FR")); // PASSAGE AU FORMAT MOIS/ANNEE
+            if(SelectDate.SelectedDate.ToString() != DateTime.Today.ToString())
+            {
+               MessageBox.Show(dateStr);
+            }
+            
+        }        
+
+        private void LogOut_Click(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = new Mainwindow();
+            mainWindow.Show();
+            this.Hide();
+        }
+
+        private void ConsulterFrais_Click_1(object sender, RoutedEventArgs e)
+        {
+
         }
 
         private void Effacer_Click(object sender, RoutedEventArgs e)
@@ -99,18 +116,6 @@ namespace GSB___JLAME
         }
 
         private void NbJustificatif_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void LogOut_Click(object sender, RoutedEventArgs e)
-        {
-            var mainWindow = new Mainwindow();
-            mainWindow.Show();
-            this.Hide();
-        }
-
-        private void ConsulterFrais_Click_1(object sender, RoutedEventArgs e)
         {
 
         }

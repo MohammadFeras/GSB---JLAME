@@ -68,5 +68,21 @@ namespace GSB___JLAME
             dataReader.Close();
             return toReturn;
         }
+
+        public static List<string> RequestDisplayFicheFrais()
+        {
+            List<string> toReturn = new List<string>();
+            SqlCommand command = Connexion.GetInstance().CreateCommand();
+            command.CommandText = " SELECT LigneFraisForfait.quantite FROM FraisForfait, LigneFraisForfait WHERE LigneFraisForfait.idFraisForfait = FraisForfait.id";
+
+            // Lecture des résultats
+            SqlDataReader dataReader = command.ExecuteReader();
+            while (dataReader.Read())
+            {
+                toReturn.Add(dataReader[0].ToString());
+            }
+            dataReader.Close();
+            return toReturn;
+        }
     }
 }
