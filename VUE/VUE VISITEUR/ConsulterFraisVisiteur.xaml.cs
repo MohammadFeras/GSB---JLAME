@@ -45,5 +45,14 @@ namespace GSB___JLAME
             MessageBox.Show(dateStr);
         }
 
+        private void Forfait_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void HorsForfait_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

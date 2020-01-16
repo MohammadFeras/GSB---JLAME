@@ -18,7 +18,7 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Label Content="Période" HorizontalAlignment="Left" Margin="222,10,0,0" VerticalAlignment="Top" Height="45" Width="203" FontSize="25"/>
+        <Label Content="Consultation des Frais" HorizontalAlignment="Left" Margin="222,10,0,0" VerticalAlignment="Top" Height="45" Width="668" FontSize="25"/>
         <Label Content="Mois/Année:" HorizontalAlignment="Left" Margin="222,60,0,0" VerticalAlignment="Top" Height="34" Width="102" FontSize="15"/>
         <Label Content="Frais au forfait" HorizontalAlignment="Left" Margin="222,106,0,0" VerticalAlignment="Top" Width="117" FontSize="15"/>
         <Label Content="Hors forfait" HorizontalAlignment="Left" Margin="222,247,0,0" VerticalAlignment="Top" Width="117" FontSize="15"/>
@@ -45,7 +45,7 @@
         <Label Content="Nb Justificatifs" HorizontalAlignment="Left" Margin="222,394,0,0" VerticalAlignment="Top" Width="117" FontSize="15"/>
         <TextBox HorizontalAlignment="Left" Margin="383,402,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="60"/>
         <Button Content="Se Déconnecter" Height="42" VerticalAlignment="Top" Margin="0,345,692,0" Click="LogOut_Click"/>
-        <Button Content="Saisie Frais" Height="42" VerticalAlignment="Top" Margin="0,127,692,0" Click="ValidFrais_Click_1"/>
+        <Button Content="Valider Frais" Height="42" VerticalAlignment="Top" Margin="0,127,692,0" Click="ValidFrais_Click_1"/>
         <DatePicker  x:Name="DatePicker1" SelectedDateFormat="Short" HorizontalAlignment="Left" Margin="329,65,0,0" VerticalAlignment="Top" SelectedDateChanged ="SelectDate_SelectionChanged"/>
         <Label Content="Choisir le visiteur :" HorizontalAlignment="Left" Height="29" Margin="520,61,0,0" VerticalAlignment="Top" Width="133" FontSize="15"/>
         <ComboBox x:Name="SelectName" HorizontalAlignment="Left" Height="26" Margin="658,64,0,0" VerticalAlignment="Top" Width="120" Text="Select Name" SelectionChanged="SelectName_SelectionChanged" IsEditable="True" IsReadOnly="True"/>

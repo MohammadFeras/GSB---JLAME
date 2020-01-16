@@ -87,7 +87,9 @@ namespace GSB___JLAME
 
         private void ConsulterFrais_Click_1(object sender, RoutedEventArgs e)
         {
-
+            var consulterFrais = new ConsulterFraisComptable();
+            consulterFrais.Show();
+            this.Hide();
         }
 
         private void Effacer_Click(object sender, RoutedEventArgs e)

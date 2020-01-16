@@ -14,7 +14,7 @@ namespace GSB___JLAME
             // Préparation de la connexion à la base de données
             if (LaConnexion == null)
             {
-                string nomBD = "GSB PPE";//Nom de la BD SQL
+                string nomBD = "GSB_PPE";//Nom de la BD SQL
                 string nomServeur = "BTSWIN7-99\\SQLEXPRESS";//Erwann,Loic,Mohammad
                                                              //"BTSWIN7-99";//Jonathan
                                                              //"ADMIN-PC\\SQLSERVERPERSO";//Amélie

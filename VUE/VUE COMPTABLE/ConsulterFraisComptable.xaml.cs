@@ -21,6 +21,8 @@ namespace GSB___JLAME
         {
             InitializeComponent();
 
+            RemplirComboBoxName();
+
             /**** Liaison avec la Vue Modèle ****/
             FicheFraisVueModele = new FicheFraisVueModele();
             this.DataContext = FicheFraisVueModele;
@@ -28,12 +30,22 @@ namespace GSB___JLAME
             DatePicker1.DisplayDateStart = DateTime.Today.AddYears(-1); // Permet d'éviter de rentrer une date qui dépasse les 1 an avant la date d'aujourd'hui
             DatePicker1.DisplayDateEnd = DateTime.Today; // Permet d'éviter de rentrer une date après la date d'aujourd'hui
             DatePicker1.SelectedDate = DateTime.Today; //Affecter la date d'aujourd'hui en texte par défault dans le datePicker
+
         }
+
+        //**** REMPLIR COMBOBOX NAME ****//
+        public void RemplirComboBoxName()
+        {
+            List<string> item = DAOComptabilite.RequestCompleteComboBoxPrenoms(); //REQUETE POUR COMPLETER COMBOBOX PRENOMS
+            SelectName.ItemsSource = item;
+        }
+
+
 
         private void ValidFrais_Click_1(object sender, RoutedEventArgs e)
         {
-            var saisieFrais = new SaisieFrais();
-            saisieFrais.Show();
+            var validerFrais = new ValiderFrais();
+            validerFrais.Show();
             this.Hide();
         }
 
@@ -58,5 +70,14 @@ namespace GSB___JLAME
             DataGridhorsForfait.ItemsSource = FicheFraisVueModele.Complete(selectedName);
         }
 
+        private void HorsForfait_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void Forfait_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

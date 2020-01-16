@@ -18,7 +18,7 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Label Content="Période" HorizontalAlignment="Left" Margin="222,10,0,0" VerticalAlignment="Top" Height="45" Width="203" FontSize="25"/>
+        <Label Content="Consultation des Frais" HorizontalAlignment="Left" Margin="222,10,0,0" VerticalAlignment="Top" Height="45" Width="668" FontSize="25"/>
         <Label Content="Mois/Année:" HorizontalAlignment="Left" Margin="222,60,0,0" VerticalAlignment="Top" Height="34" Width="102" FontSize="15"/>
         <Label Content="Frais au forfait" HorizontalAlignment="Left" Margin="222,106,0,0" VerticalAlignment="Top" Width="117" FontSize="15"/>
         <Label Content="Hors forfait" HorizontalAlignment="Left" Margin="222,247,0,0" VerticalAlignment="Top" Width="117" FontSize="15"/>
